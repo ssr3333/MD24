@@ -1,0 +1,305 @@
+[p LITE_MODE AUTOSTATIC PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F690 ]
+[d frameptr 6 ]
+"6 E:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"62 E:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 E:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"6 E:\Program Files (x86)\Microchip\xc8\v1.38\sources\pic\eeprom.c
+[v _eecpymem eecpymem `(v  1 e 1 0 ]
+"39
+[v _memcpyee memcpyee `(v  1 e 1 0 ]
+"31 D:\MPLABXProjects\16F690\MD48.X\init_16f690.c
+[v _init_16f690 init_16f690 `(v  1 e 1 0 ]
+"10 D:\MPLABXProjects\16F690\MD48.X\init_modbus.c
+[v _send_one send_one `(v  1 e 1 0 ]
+"23
+[v _modbus_send modbus_send `(v  1 e 1 0 ]
+"44
+[v _modbus_recv modbus_recv `(v  1 e 1 0 ]
+"77
+[v _crc16 crc16 `(v  1 e 1 0 ]
+"159
+[v _set_timer1 set_timer1 `(v  1 e 1 0 ]
+"58 D:\MPLABXProjects\16F690\MD48.X\main.c
+[v _main main `(v  1 e 1 0 ]
+"163
+[v _ISR ISR `II(v  1 e 1 0 ]
+"211
+[v _process_cmd process_cmd `(v  1 e 1 0 ]
+"160 E:\Program Files (x86)\Microchip\xc8\v1.38\include\pic16f690.h
+[v _PORTA PORTA `VEuc  1 e 1 @5 ]
+"209
+[v _PORTB PORTB `VEuc  1 e 1 @6 ]
+"247
+[v _PORTC PORTC `VEuc  1 e 1 @7 ]
+"314
+[v _INTCON INTCON `VEuc  1 e 1 @11 ]
+"375
+[v _PIR1 PIR1 `VEuc  1 e 1 @12 ]
+"444
+[v _PIR2 PIR2 `VEuc  1 e 1 @13 ]
+"488
+[v _TMR1L TMR1L `VEuc  1 e 1 @14 ]
+"494
+[v _TMR1H TMR1H `VEuc  1 e 1 @15 ]
+"500
+[v _T1CON T1CON `VEuc  1 e 1 @16 ]
+"576
+[v _T2CON T2CON `VEuc  1 e 1 @18 ]
+"881
+[v _TXREG TXREG `VEuc  1 e 1 @25 ]
+"887
+[v _RCREG RCREG `VEuc  1 e 1 @26 ]
+"1143
+[v _OPTION_REG OPTION_REG `VEuc  1 e 1 @129 ]
+"1212
+[v _TRISA TRISA `VEuc  1 e 1 @133 ]
+"1261
+[v _TRISB TRISB `VEuc  1 e 1 @134 ]
+"1299
+[v _TRISC TRISC `VEuc  1 e 1 @135 ]
+"1360
+[v _PIE1 PIE1 `VEuc  1 e 1 @140 ]
+"1429
+[v _PIE2 PIE2 `VEuc  1 e 1 @141 ]
+"1467
+[v _PCON PCON `VEuc  1 e 1 @142 ]
+"1505
+[v _OSCCON OSCCON `VEuc  1 e 1 @143 ]
+"1620
+[v _PR2 PR2 `VEuc  1 e 1 @146 ]
+"1921
+[v _WPUA WPUA `VEuc  1 e 1 @149 ]
+"2074
+[v _IOCA IOCA `VEuc  1 e 1 @150 ]
+"2247
+[v _WDTCON WDTCON `VEuc  1 e 1 @151 ]
+"2369
+[v _SPBRG SPBRG `VEuc  1 e 1 @153 ]
+"2430
+[v _SPBRGH SPBRGH `VEuc  1 e 1 @154 ]
+"2594
+[v _EEDATA EEDATA `VEuc  1 e 1 @268 ]
+"2600
+[v _EEADR EEADR `VEuc  1 e 1 @269 ]
+"2618
+[v _WPUB WPUB `VEuc  1 e 1 @277 ]
+"2665
+[v _IOCB IOCB `VEuc  1 e 1 @278 ]
+"2772
+[v _CM1CON0 CM1CON0 `VEuc  1 e 1 @281 ]
+"2836
+[v _CM2CON0 CM2CON0 `VEuc  1 e 1 @282 ]
+"2938
+[v _ANSEL ANSEL `VEuc  1 e 1 @286 ]
+"2999
+[v _ANSELH ANSELH `VEuc  1 e 1 @287 ]
+"3036
+[v _EECON1 EECON1 `VEuc  1 e 1 @396 ]
+"3080
+[v _EECON2 EECON2 `VEuc  1 e 1 @397 ]
+"3256
+[v _BRG16 BRG16 `VEb  1 e 0 @1243 ]
+"3274
+[v _BRGH BRGH `VEb  1 e 0 @1218 ]
+"3322
+[v _CARRY CARRY `VEb  1 e 0 @24 ]
+"3348
+[v _CREN CREN `VEb  1 e 0 @196 ]
+"3380
+[v _GIE GIE `VEb  1 e 0 @95 ]
+"3492
+[v _PEIE PEIE `VEb  1 e 0 @94 ]
+"3528
+[v _RABIE RABIE `VEb  1 e 0 @91 ]
+"3530
+[v _RABIF RABIF `VEb  1 e 0 @88 ]
+"3532
+[v _RB4 RB4 `VEb  1 e 0 @52 ]
+"3536
+[v _RB6 RB6 `VEb  1 e 0 @54 ]
+"3558
+[v _RCIE RCIE `VEb  1 e 0 @1125 ]
+"3560
+[v _RCIF RCIF `VEb  1 e 0 @101 ]
+"3562
+[v _RD RD `VEb  1 e 0 @3168 ]
+"3590
+[v _SPEN SPEN `VEb  1 e 0 @199 ]
+"3624
+[v _SWDTEN SWDTEN `VEb  1 e 0 @1208 ]
+"3626
+[v _SYNC SYNC `VEb  1 e 0 @1220 ]
+"3630
+[v _T0IE T0IE `VEb  1 e 0 @93 ]
+"3662
+[v _TMR1IE TMR1IE `VEb  1 e 0 @1120 ]
+"3664
+[v _TMR1IF TMR1IF `VEb  1 e 0 @96 ]
+"3668
+[v _TMR2IE TMR2IE `VEb  1 e 0 @1121 ]
+"3670
+[v _TMR2IF TMR2IF `VEb  1 e 0 @97 ]
+"3672
+[v _TMR2ON TMR2ON `VEb  1 e 0 @146 ]
+"3718
+[v _TRMT TRMT `VEb  1 e 0 @1217 ]
+"3734
+[v _TXEN TXEN `VEb  1 e 0 @1221 ]
+"3796
+[v _WR WR `VEb  1 e 0 @3169 ]
+"3798
+[v _WREN WREN `VEb  1 e 0 @3170 ]
+"36 D:\MPLABXProjects\16F690\MD48.X\init_modbus.h
+[v _FLAG_T1 FLAG_T1 `uc  1 e 1 0 ]
+"37
+[v _FLAG_15 FLAG_15 `uc  1 e 1 0 ]
+"38
+[v _FLAG_35 FLAG_35 `uc  1 e 1 0 ]
+"39
+[v _FLAG_RCOK FLAG_RCOK `uc  1 e 1 0 ]
+"40
+[v _RC_N RC_N `uc  1 e 1 0 ]
+"41
+[v _CRC_L CRC_L `uc  1 e 1 0 ]
+[v _CRC_H CRC_H `uc  1 e 1 0 ]
+"42
+[v _ADD ADD `uc  1 e 1 0 ]
+"39 D:\MPLABXProjects\16F690\MD48.X\main.c
+[v _RC_DATA RC_DATA `[60]uc  1 e 60 0 ]
+"40
+[v _TX_DATA TX_DATA `[60]uc  1 e 60 0 ]
+"45
+[v _IO_RAM IO_RAM `[27]uc  1 e 27 0 ]
+"49
+[v _FLAG_IOCHANGE FLAG_IOCHANGE `uc  1 e 1 0 ]
+"50
+[v _tmr2DelayCnt tmr2DelayCnt `uc  1 e 1 0 ]
+"58
+[v _main main `(v  1 e 1 0 ]
+{
+"119
+[v main@i_104 i `uc  1 a 1 21 ]
+"100
+[v main@i i `uc  1 a 1 22 ]
+"148
+[v main@i_105 i `uc  1 a 1 23 ]
+"93
+[v main@count count `uc  1 a 1 24 ]
+"155
+} 0
+"211
+[v _process_cmd process_cmd `(v  1 e 1 0 ]
+{
+"215
+[v process_cmd@i i `uc  1 a 1 3 ]
+"213
+[v process_cmd@portc portc `uc  1 a 1 2 ]
+"214
+[v process_cmd@temp temp `uc  1 a 1 1 ]
+"223
+} 0
+"23 D:\MPLABXProjects\16F690\MD48.X\init_modbus.c
+[v _modbus_send modbus_send `(v  1 e 1 0 ]
+{
+"28
+[v modbus_send@i i `uc  1 a 1 15 ]
+"23
+[v modbus_send@ptr ptr `*.39uc  1 p 2 10 ]
+[v modbus_send@len len `uc  1 p 1 12 ]
+"36
+} 0
+"10
+[v _send_one send_one `(v  1 e 1 0 ]
+{
+[v send_one@a a `uc  1 a 1 wreg ]
+[v send_one@a a `uc  1 a 1 wreg ]
+"12
+[v send_one@a a `uc  1 a 1 0 ]
+"15
+} 0
+"77
+[v _crc16 crc16 `(v  1 e 1 0 ]
+{
+"86
+[v crc16@i i `uc  1 a 1 9 ]
+"83
+[v crc16@n n `uc  1 a 1 8 ]
+"79
+[v crc16@saveHi saveHi `uc  1 a 1 7 ]
+[v crc16@saveLo saveLo `uc  1 a 1 6 ]
+"77
+[v crc16@recvByte recvByte `*.39uc  1 p 2 0 ]
+[v crc16@count count `uc  1 p 1 2 ]
+"103
+} 0
+"39 E:\Program Files (x86)\Microchip\xc8\v1.38\sources\pic\eeprom.c
+[v _memcpyee memcpyee `(v  1 e 1 0 ]
+{
+"41
+[v memcpyee@ptr ptr `*.4DCCuc  1 a 1 5 ]
+"39
+[v memcpyee@to to `*.39VEuc  1 p 2 0 ]
+[v memcpyee@from from `*.4DCCuc  1 p 1 2 ]
+[v memcpyee@size size `uc  1 p 1 3 ]
+"93
+} 0
+"31 D:\MPLABXProjects\16F690\MD48.X\init_16f690.c
+[v _init_16f690 init_16f690 `(v  1 e 1 0 ]
+{
+"118
+} 0
+"6 E:\Program Files (x86)\Microchip\xc8\v1.38\sources\pic\eeprom.c
+[v _eecpymem eecpymem `(v  1 e 1 0 ]
+{
+"8
+[v eecpymem@cp cp `*.39VEuc  1 a 2 6 ]
+"6
+[v eecpymem@to to `*.39VEuc  1 p 2 0 ]
+[v eecpymem@from from `*.39VEuc  1 p 2 2 ]
+[v eecpymem@size size `uc  1 p 1 4 ]
+"36
+} 0
+"6 E:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"11
+[v ___awdiv@quotient quotient `i  1 a 2 7 ]
+"12
+[v ___awdiv@sign sign `uc  1 a 1 6 ]
+[v ___awdiv@counter counter `uc  1 a 1 5 ]
+"6
+[v ___awdiv@divisor divisor `i  1 p 2 0 ]
+[v ___awdiv@dividend dividend `i  1 p 2 2 ]
+"42
+} 0
+"163 D:\MPLABXProjects\16F690\MD48.X\main.c
+[v _ISR ISR `II(v  1 e 1 0 ]
+{
+"203
+} 0
+"44 D:\MPLABXProjects\16F690\MD48.X\init_modbus.c
+[v _modbus_recv modbus_recv `(v  1 e 1 0 ]
+{
+[v modbus_recv@recv_data recv_data `uc  1 a 1 wreg ]
+"46
+[v modbus_recv@rd rd `uc  1 a 1 3 ]
+"44
+[v modbus_recv@recv_data recv_data `uc  1 a 1 wreg ]
+"47
+[v modbus_recv@recv_data recv_data `uc  1 a 1 2 ]
+"69
+} 0
+"159
+[v _set_timer1 set_timer1 `(v  1 e 1 0 ]
+{
+[v set_timer1@mode mode `uc  1 a 1 wreg ]
+[v set_timer1@mode mode `uc  1 a 1 wreg ]
+[v set_timer1@mode mode `uc  1 a 1 0 ]
+"177
+} 0

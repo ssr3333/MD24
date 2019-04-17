@@ -1,0 +1,12 @@
+_send_one: CODE, 471 0 7
+_eecpymem: CODE, 650 0 42
+_process_cmd: CODE, 718 0 23
+_ISR: CODE, 306 0 58
+_main: CODE, 15 0 291
+_crc16: CODE, 478 0 46
+_init_16f690: CODE, 524 0 73
+_modbus_send: CODE, 425 0 46
+_modbus_recv: CODE, 392 0 33
+_set_timer1: CODE, 364 0 28
+_memcpyee: CODE, 597 0 53
+Total: 700

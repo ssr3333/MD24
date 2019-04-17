@@ -1,0 +1,2992 @@
+
+
+Microchip Technology PIC LITE Macro Assembler V1.38 build -256452561 
+                                                                                               Mon Oct 16 08:44:57 2017
+
+Microchip Technology Omniscient Code Generator v1.38 (Free mode) build 201607010351
+     1                           	processor	16F690
+     2                           	opt	pw 120
+     3                           	opt	lm
+     4                           	psect	eeprom_data,global,class=EEDATA,space=3,delta=2
+     5                           	psect	idataBANK0,global,class=CODE,delta=2
+     6                           	psect	cinit,global,class=CODE,merge=1,delta=2
+     7                           	psect	bssCOMMON,global,class=COMMON,space=1,delta=1
+     8                           	psect	bssBANK0,global,class=BANK0,space=1,delta=1
+     9                           	psect	dataBANK0,global,class=BANK0,space=1,delta=1
+    10                           	psect	bssBANK1,global,class=BANK1,space=1,delta=1
+    11                           	psect	bssBANK2,global,class=BANK2,space=1,delta=1
+    12                           	psect	clrtext,global,class=CODE,delta=2
+    13                           	psect	cstackCOMMON,global,class=COMMON,space=1,delta=1
+    14                           	psect	cstackBANK0,global,class=BANK0,space=1,delta=1
+    15                           	psect	maintext,global,class=CODE,split=1,delta=2
+    16                           	psect	text1,local,class=CODE,merge=1,delta=2
+    17                           	psect	text2,local,class=CODE,merge=1,delta=2
+    18                           	psect	text3,local,class=CODE,merge=1,delta=2
+    19                           	psect	text4,local,class=CODE,merge=1,delta=2
+    20                           	psect	text5,local,class=CODE,merge=1,delta=2
+    21                           	psect	text6,local,class=CODE,merge=1,delta=2
+    22                           	psect	text7,local,class=CODE,merge=1,delta=2
+    23                           	psect	text8,local,class=CODE,merge=1,delta=2
+    24                           	psect	text9,local,class=CODE,merge=1,delta=2
+    25                           	psect	intentry,global,class=CODE,delta=2
+    26                           	psect	text10,local,class=CODE,merge=1,delta=2
+    27                           	psect	text11,local,class=CODE,merge=1,delta=2
+    28                           	dabs	1,0x7E,2
+    29  0000                     	;# 
+    30  0001                     	;# 
+    31  0002                     	;# 
+    32  0003                     	;# 
+    33  0004                     	;# 
+    34  0005                     	;# 
+    35  0006                     	;# 
+    36  0007                     	;# 
+    37  000A                     	;# 
+    38  000B                     	;# 
+    39  000C                     	;# 
+    40  000D                     	;# 
+    41  000E                     	;# 
+    42  000E                     	;# 
+    43  000F                     	;# 
+    44  0010                     	;# 
+    45  0011                     	;# 
+    46  0012                     	;# 
+    47  0013                     	;# 
+    48  0014                     	;# 
+    49  0015                     	;# 
+    50  0015                     	;# 
+    51  0016                     	;# 
+    52  0017                     	;# 
+    53  0018                     	;# 
+    54  0019                     	;# 
+    55  001A                     	;# 
+    56  001C                     	;# 
+    57  001D                     	;# 
+    58  001E                     	;# 
+    59  001F                     	;# 
+    60  0081                     	;# 
+    61  0085                     	;# 
+    62  0086                     	;# 
+    63  0087                     	;# 
+    64  008C                     	;# 
+    65  008D                     	;# 
+    66  008E                     	;# 
+    67  008F                     	;# 
+    68  0090                     	;# 
+    69  0092                     	;# 
+    70  0093                     	;# 
+    71  0093                     	;# 
+    72  0093                     	;# 
+    73  0094                     	;# 
+    74  0095                     	;# 
+    75  0095                     	;# 
+    76  0096                     	;# 
+    77  0096                     	;# 
+    78  0097                     	;# 
+    79  0098                     	;# 
+    80  0099                     	;# 
+    81  009A                     	;# 
+    82  009B                     	;# 
+    83  009E                     	;# 
+    84  009F                     	;# 
+    85  010C                     	;# 
+    86  010C                     	;# 
+    87  010D                     	;# 
+    88  010E                     	;# 
+    89  010F                     	;# 
+    90  0115                     	;# 
+    91  0116                     	;# 
+    92  0118                     	;# 
+    93  0119                     	;# 
+    94  011A                     	;# 
+    95  011B                     	;# 
+    96  011E                     	;# 
+    97  011F                     	;# 
+    98  018C                     	;# 
+    99  018D                     	;# 
+   100  019D                     	;# 
+   101  019E                     	;# 
+   102  0000                     	;# 
+   103  0001                     	;# 
+   104  0002                     	;# 
+   105  0003                     	;# 
+   106  0004                     	;# 
+   107  0005                     	;# 
+   108  0006                     	;# 
+   109  0007                     	;# 
+   110  000A                     	;# 
+   111  000B                     	;# 
+   112  000C                     	;# 
+   113  000D                     	;# 
+   114  000E                     	;# 
+   115  000E                     	;# 
+   116  000F                     	;# 
+   117  0010                     	;# 
+   118  0011                     	;# 
+   119  0012                     	;# 
+   120  0013                     	;# 
+   121  0014                     	;# 
+   122  0015                     	;# 
+   123  0015                     	;# 
+   124  0016                     	;# 
+   125  0017                     	;# 
+   126  0018                     	;# 
+   127  0019                     	;# 
+   128  001A                     	;# 
+   129  001C                     	;# 
+   130  001D                     	;# 
+   131  001E                     	;# 
+   132  001F                     	;# 
+   133  0081                     	;# 
+   134  0085                     	;# 
+   135  0086                     	;# 
+   136  0087                     	;# 
+   137  008C                     	;# 
+   138  008D                     	;# 
+   139  008E                     	;# 
+   140  008F                     	;# 
+   141  0090                     	;# 
+   142  0092                     	;# 
+   143  0093                     	;# 
+   144  0093                     	;# 
+   145  0093                     	;# 
+   146  0094                     	;# 
+   147  0095                     	;# 
+   148  0095                     	;# 
+   149  0096                     	;# 
+   150  0096                     	;# 
+   151  0097                     	;# 
+   152  0098                     	;# 
+   153  0099                     	;# 
+   154  009A                     	;# 
+   155  009B                     	;# 
+   156  009E                     	;# 
+   157  009F                     	;# 
+   158  010C                     	;# 
+   159  010C                     	;# 
+   160  010D                     	;# 
+   161  010E                     	;# 
+   162  010F                     	;# 
+   163  0115                     	;# 
+   164  0116                     	;# 
+   165  0118                     	;# 
+   166  0119                     	;# 
+   167  011A                     	;# 
+   168  011B                     	;# 
+   169  011E                     	;# 
+   170  011F                     	;# 
+   171  018C                     	;# 
+   172  018D                     	;# 
+   173  019D                     	;# 
+   174  019E                     	;# 
+   175  0000                     	;# 
+   176  0001                     	;# 
+   177  0002                     	;# 
+   178  0003                     	;# 
+   179  0004                     	;# 
+   180  0005                     	;# 
+   181  0006                     	;# 
+   182  0007                     	;# 
+   183  000A                     	;# 
+   184  000B                     	;# 
+   185  000C                     	;# 
+   186  000D                     	;# 
+   187  000E                     	;# 
+   188  000E                     	;# 
+   189  000F                     	;# 
+   190  0010                     	;# 
+   191  0011                     	;# 
+   192  0012                     	;# 
+   193  0013                     	;# 
+   194  0014                     	;# 
+   195  0015                     	;# 
+   196  0015                     	;# 
+   197  0016                     	;# 
+   198  0017                     	;# 
+   199  0018                     	;# 
+   200  0019                     	;# 
+   201  001A                     	;# 
+   202  001C                     	;# 
+   203  001D                     	;# 
+   204  001E                     	;# 
+   205  001F                     	;# 
+   206  0081                     	;# 
+   207  0085                     	;# 
+   208  0086                     	;# 
+   209  0087                     	;# 
+   210  008C                     	;# 
+   211  008D                     	;# 
+   212  008E                     	;# 
+   213  008F                     	;# 
+   214  0090                     	;# 
+   215  0092                     	;# 
+   216  0093                     	;# 
+   217  0093                     	;# 
+   218  0093                     	;# 
+   219  0094                     	;# 
+   220  0095                     	;# 
+   221  0095                     	;# 
+   222  0096                     	;# 
+   223  0096                     	;# 
+   224  0097                     	;# 
+   225  0098                     	;# 
+   226  0099                     	;# 
+   227  009A                     	;# 
+   228  009B                     	;# 
+   229  009E                     	;# 
+   230  009F                     	;# 
+   231  010C                     	;# 
+   232  010C                     	;# 
+   233  010D                     	;# 
+   234  010E                     	;# 
+   235  010F                     	;# 
+   236  0115                     	;# 
+   237  0116                     	;# 
+   238  0118                     	;# 
+   239  0119                     	;# 
+   240  011A                     	;# 
+   241  011B                     	;# 
+   242  011E                     	;# 
+   243  011F                     	;# 
+   244  018C                     	;# 
+   245  018D                     	;# 
+   246  019D                     	;# 
+   247  019E                     	;# 
+   248                           
+   249                           	psect	eeprom_data
+   250  0000  0000 0004 0001 0000 004D 0044 0038 0038 	db	0,4,1,0,77,68,56,56	;# 
+   251  0008  0000 0000 0000 0000 0000 0000 0000 0000 	db	0,0,0,0,0,0,0,0	;# 
+   252  0010  0000 0000 0000 0000 0000 0000 0000 0000 	db	0,0,0,0,0,0,0,0	;# 
+   253  0018  0000 0001 00FF 00FF 00FF 00FF 00FF 00FF 	db	0,1,255,255,255,255,255,255	;# 
+   254  0020  0000 0000 0000 0000 0000 0000 0000 0000 	db	0,0,0,0,0,0,0,0	;# 
+   255  0028  0000 0000 0000 0000 0000 0000 0000 0000 	db	0,0,0,0,0,0,0,0	;# 
+   256  0030  0000 0000 0000 0000 0001 0001 0001 0001 	db	0,0,0,0,1,1,1,1	;# 
+   257  0038  0000 0000 00FF 0000 0000 0000 0000 0000 	db	0,0,255,0,0,0,0,0	;# 
+   258  0040  0000 0000 0000 0000 0000 0000 0000 0000 	db	0,0,0,0,0,0,0,0	;# 
+   259  0048  0000 0000 0000 0000 0000 0000 0000 0000 	db	0,0,0,0,0,0,0,0	;# 
+   260  0050  0000 0000 0000 0000 0000 0000 0000 0000 	db	0,0,0,0,0,0,0,0	;# 
+   261  0058  0000 0000 0000 0000 0000 0000 0000 0000 	db	0,0,0,0,0,0,0,0	;# 
+   262                           
+   263                           	psect	idataBANK0
+   264  046C                     __pidataBANK0:	
+   265                           
+   266                           ;initializer for _FLAG_IOCHANGE
+   267  046C  3401               	retlw	1
+   268  000B                     _INTCON	set	11
+   269  000C                     _PIR1	set	12
+   270  000D                     _PIR2	set	13
+   271  0005                     _PORTA	set	5
+   272  0006                     _PORTB	set	6
+   273  0007                     _PORTC	set	7
+   274  001A                     _RCREG	set	26
+   275  0010                     _T1CON	set	16
+   276  0012                     _T2CON	set	18
+   277  000F                     _TMR1H	set	15
+   278  000E                     _TMR1L	set	14
+   279  0019                     _TXREG	set	25
+   280  0018                     _CARRY	set	24
+   281  00C4                     _CREN	set	196
+   282  005F                     _GIE	set	95
+   283  005E                     _PEIE	set	94
+   284  005B                     _RABIE	set	91
+   285  0058                     _RABIF	set	88
+   286  0034                     _RB4	set	52
+   287  0036                     _RB6	set	54
+   288  0065                     _RCIF	set	101
+   289  00C7                     _SPEN	set	199
+   290  005D                     _T0IE	set	93
+   291  0060                     _TMR1IF	set	96
+   292  0061                     _TMR2IF	set	97
+   293  0092                     _TMR2ON	set	146
+   294  0096                     _IOCA	set	150
+   295  0081                     _OPTION_REG	set	129
+   296  008F                     _OSCCON	set	143
+   297  008E                     _PCON	set	142
+   298  008C                     _PIE1	set	140
+   299  008D                     _PIE2	set	141
+   300  0092                     _PR2	set	146
+   301  0099                     _SPBRG	set	153
+   302  009A                     _SPBRGH	set	154
+   303  0085                     _TRISA	set	133
+   304  0086                     _TRISB	set	134
+   305  0087                     _TRISC	set	135
+   306  0097                     _WDTCON	set	151
+   307  0095                     _WPUA	set	149
+   308  04DB                     _BRG16	set	1243
+   309  04C2                     _BRGH	set	1218
+   310  0465                     _RCIE	set	1125
+   311  04B8                     _SWDTEN	set	1208
+   312  04C4                     _SYNC	set	1220
+   313  0460                     _TMR1IE	set	1120
+   314  0461                     _TMR2IE	set	1121
+   315  04C1                     _TRMT	set	1217
+   316  04C5                     _TXEN	set	1221
+   317  011E                     _ANSEL	set	286
+   318  011F                     _ANSELH	set	287
+   319  0119                     _CM1CON0	set	281
+   320  011A                     _CM2CON0	set	282
+   321  010D                     _EEADR	set	269
+   322  010C                     _EEDATA	set	268
+   323  0116                     _IOCB	set	278
+   324  0115                     _WPUB	set	277
+   325  018C                     _EECON1	set	396
+   326  018D                     _EECON2	set	397
+   327  0C60                     _RD	set	3168
+   328  0C61                     _WR	set	3169
+   329  0C62                     _WREN	set	3170
+   330                           
+   331                           ; #config settings
+   332  0009                     
+   333                           	psect	cinit
+   334  0013                     start_initialization:	
+   335  0013                     __initialization:	
+   336                           
+   337                           ; Initialize objects allocated to BANK0
+   338  0013  118A  246C  118A   	fcall	__pidataBANK0	;fetch initializer
+   339  0016  00DB               	movwf	__pdataBANK0& (0+127)
+   340                           
+   341                           ; Clear objects allocated to BANK2
+   342  0017  1783               	bsf	3,7	;select IRP bank2
+   343  0018  3020               	movlw	low __pbssBANK2
+   344  0019  0084               	movwf	4
+   345  001A  305C               	movlw	low (__pbssBANK2+60)
+   346  001B  118A  2464  118A   	fcall	clear_ram0
+   347                           
+   348                           ; Clear objects allocated to BANK1
+   349  001E  1383               	bcf	3,7	;select IRP bank0
+   350  001F  30A0               	movlw	low __pbssBANK1
+   351  0020  0084               	movwf	4
+   352  0021  30DC               	movlw	low (__pbssBANK1+60)
+   353  0022  118A  2464  118A   	fcall	clear_ram0
+   354                           
+   355                           ; Clear objects allocated to BANK0
+   356  0025  3020               	movlw	low __pbssBANK0
+   357  0026  0084               	movwf	4
+   358  0027  3042               	movlw	low (__pbssBANK0+34)
+   359  0028  118A  2464         	fcall	clear_ram0
+   360                           
+   361                           ; Clear objects allocated to COMMON
+   362  002A  01F9               	clrf	__pbssCOMMON& (0+127)
+   363  002B  01FA               	clrf	(__pbssCOMMON+1)& (0+127)
+   364  002C                     end_of_initialization:	
+   365                           ;End of C runtime variable initialization code
+   366                           
+   367  002C                     __end_of__initialization:	
+   368  002C  0183               	clrf	3
+   369  002D  118A  282F         	ljmp	_main	;jump to C main() function
+   370                           
+   371                           	psect	bssCOMMON
+   372  0079                     __pbssCOMMON:	
+   373  0079                     _FLAG_35:	
+   374  0079                     	ds	1
+   375  007A                     _FLAG_T1:	
+   376  007A                     	ds	1
+   377                           
+   378                           	psect	bssBANK0
+   379  0020                     __pbssBANK0:	
+   380  0020                     _ADD:	
+   381  0020                     	ds	1
+   382  0021                     _CRC_H:	
+   383  0021                     	ds	1
+   384  0022                     _CRC_L:	
+   385  0022                     	ds	1
+   386  0023                     _FLAG_15:	
+   387  0023                     	ds	1
+   388  0024                     _FLAG_RCOK:	
+   389  0024                     	ds	1
+   390  0025                     _RC_N:	
+   391  0025                     	ds	1
+   392  0026                     _tmr2DelayCnt:	
+   393  0026                     	ds	1
+   394  0027                     _IO_RAM:	
+   395  0027                     	ds	27
+   396                           
+   397                           	psect	dataBANK0
+   398  005B                     __pdataBANK0:	
+   399  005B                     _FLAG_IOCHANGE:	
+   400  005B                     	ds	1
+   401                           
+   402                           	psect	bssBANK1
+   403  00A0                     __pbssBANK1:	
+   404  00A0                     _RC_DATA:	
+   405  00A0                     	ds	60
+   406                           
+   407                           	psect	bssBANK2
+   408  0120                     __pbssBANK2:	
+   409  0120                     _TX_DATA:	
+   410  0120                     	ds	60
+   411                           
+   412                           	psect	clrtext
+   413  0464                     clear_ram0:	
+   414                           ;	Called with FSR containing the base address, and
+   415                           ;	W with the last address+1
+   416                           
+   417  0464  0064               	clrwdt	;clear the watchdog before getting into this loop
+   418  0465                     clrloop0:	
+   419  0465  0180               	clrf	0	;clear RAM location pointed to by FSR
+   420  0466  0A84               	incf	4,f	;increment pointer
+   421  0467  0604               	xorwf	4,w	;XOR with final address
+   422  0468  1903               	btfsc	3,2	;have we reached the end yet?
+   423  0469  3400               	retlw	0	;all done for this memory range, return
+   424  046A  0604               	xorwf	4,w	;XOR again to restore value
+   425  046B  2C65               	goto	clrloop0	;do the next byte
+   426                           
+   427                           	psect	cstackCOMMON
+   428  0070                     __pcstackCOMMON:	
+   429  0070                     ?_init_16f690:	
+   430  0070                     ?_process_cmd:	
+   431                           ; 1 bytes @ 0x0
+   432                           
+   433  0070                     ?_set_timer1:	
+   434                           ; 1 bytes @ 0x0
+   435                           
+   436  0070                     ??_set_timer1:	
+   437                           ; 1 bytes @ 0x0
+   438                           
+   439  0070                     ?_modbus_recv:	
+   440                           ; 1 bytes @ 0x0
+   441                           
+   442  0070                     ?_main:	
+   443                           ; 1 bytes @ 0x0
+   444                           
+   445  0070                     ?_ISR:	
+   446                           ; 1 bytes @ 0x0
+   447                           
+   448  0070                     ?_send_one:	
+   449                           ; 1 bytes @ 0x0
+   450                           
+   451  0070                     set_timer1@mode:	
+   452                           ; 1 bytes @ 0x0
+   453                           
+   454                           
+   455                           ; 1 bytes @ 0x0
+   456  0070                     	ds	1
+   457  0071                     ??_modbus_recv:	
+   458                           
+   459                           ; 1 bytes @ 0x1
+   460  0071                     	ds	1
+   461  0072                     modbus_recv@recv_data:	
+   462                           
+   463                           ; 1 bytes @ 0x2
+   464  0072                     	ds	1
+   465  0073                     modbus_recv@rd:	
+   466                           
+   467                           ; 1 bytes @ 0x3
+   468  0073                     	ds	1
+   469  0074                     ??_ISR:	
+   470                           
+   471                           ; 1 bytes @ 0x4
+   472  0074                     	ds	5
+   473                           
+   474                           	psect	cstackBANK0
+   475  0042                     __pcstackBANK0:	
+   476  0042                     ??_init_16f690:	
+   477  0042                     ?_eecpymem:	
+   478                           ; 1 bytes @ 0x0
+   479                           
+   480  0042                     ?_crc16:	
+   481                           ; 1 bytes @ 0x0
+   482                           
+   483  0042                     ??_process_cmd:	
+   484                           ; 1 bytes @ 0x0
+   485                           
+   486  0042                     ?_memcpyee:	
+   487                           ; 1 bytes @ 0x0
+   488                           
+   489  0042                     ??_send_one:	
+   490                           ; 1 bytes @ 0x0
+   491                           
+   492  0042                     ?___awdiv:	
+   493                           ; 1 bytes @ 0x0
+   494                           
+   495  0042                     send_one@a:	
+   496                           ; 2 bytes @ 0x0
+   497                           
+   498  0042                     crc16@recvByte:	
+   499                           ; 1 bytes @ 0x0
+   500                           
+   501  0042                     eecpymem@to:	
+   502                           ; 2 bytes @ 0x0
+   503                           
+   504  0042                     memcpyee@to:	
+   505                           ; 2 bytes @ 0x0
+   506                           
+   507  0042                     ___awdiv@divisor:	
+   508                           ; 2 bytes @ 0x0
+   509                           
+   510                           
+   511                           ; 2 bytes @ 0x0
+   512  0042                     	ds	1
+   513  0043                     process_cmd@temp:	
+   514                           
+   515                           ; 1 bytes @ 0x1
+   516  0043                     	ds	1
+   517  0044                     process_cmd@portc:	
+   518  0044                     crc16@count:	
+   519                           ; 1 bytes @ 0x2
+   520                           
+   521  0044                     memcpyee@from:	
+   522                           ; 1 bytes @ 0x2
+   523                           
+   524  0044                     eecpymem@from:	
+   525                           ; 1 bytes @ 0x2
+   526                           
+   527  0044                     ___awdiv@dividend:	
+   528                           ; 2 bytes @ 0x2
+   529                           
+   530                           
+   531                           ; 2 bytes @ 0x2
+   532  0044                     	ds	1
+   533  0045                     ??_crc16:	
+   534  0045                     process_cmd@i:	
+   535                           ; 1 bytes @ 0x3
+   536                           
+   537  0045                     memcpyee@size:	
+   538                           ; 1 bytes @ 0x3
+   539                           
+   540                           
+   541                           ; 1 bytes @ 0x3
+   542  0045                     	ds	1
+   543  0046                     ??_memcpyee:	
+   544  0046                     ??___awdiv:	
+   545                           ; 1 bytes @ 0x4
+   546                           
+   547  0046                     eecpymem@size:	
+   548                           ; 1 bytes @ 0x4
+   549                           
+   550                           
+   551                           ; 1 bytes @ 0x4
+   552  0046                     	ds	1
+   553  0047                     ??_eecpymem:	
+   554  0047                     memcpyee@ptr:	
+   555                           ; 1 bytes @ 0x5
+   556                           
+   557  0047                     ___awdiv@counter:	
+   558                           ; 1 bytes @ 0x5
+   559                           
+   560                           
+   561                           ; 1 bytes @ 0x5
+   562  0047                     	ds	1
+   563  0048                     crc16@saveLo:	
+   564  0048                     ___awdiv@sign:	
+   565                           ; 1 bytes @ 0x6
+   566                           
+   567  0048                     eecpymem@cp:	
+   568                           ; 1 bytes @ 0x6
+   569                           
+   570                           
+   571                           ; 2 bytes @ 0x6
+   572  0048                     	ds	1
+   573  0049                     crc16@saveHi:	
+   574  0049                     ___awdiv@quotient:	
+   575                           ; 1 bytes @ 0x7
+   576                           
+   577                           
+   578                           ; 2 bytes @ 0x7
+   579  0049                     	ds	1
+   580  004A                     crc16@n:	
+   581                           
+   582                           ; 1 bytes @ 0x8
+   583  004A                     	ds	1
+   584  004B                     crc16@i:	
+   585                           
+   586                           ; 1 bytes @ 0x9
+   587  004B                     	ds	1
+   588  004C                     ?_modbus_send:	
+   589  004C                     modbus_send@ptr:	
+   590                           ; 1 bytes @ 0xA
+   591                           
+   592                           
+   593                           ; 2 bytes @ 0xA
+   594  004C                     	ds	2
+   595  004E                     modbus_send@len:	
+   596                           
+   597                           ; 1 bytes @ 0xC
+   598  004E                     	ds	1
+   599  004F                     ??_modbus_send:	
+   600                           
+   601                           ; 1 bytes @ 0xD
+   602  004F                     	ds	2
+   603  0051                     modbus_send@i:	
+   604                           
+   605                           ; 1 bytes @ 0xF
+   606  0051                     	ds	1
+   607  0052                     ??_main:	
+   608                           
+   609                           ; 1 bytes @ 0x10
+   610  0052                     	ds	5
+   611  0057                     main@i_104:	
+   612                           
+   613                           ; 1 bytes @ 0x15
+   614  0057                     	ds	1
+   615  0058                     main@i:	
+   616                           
+   617                           ; 1 bytes @ 0x16
+   618  0058                     	ds	1
+   619  0059                     main@i_105:	
+   620                           
+   621                           ; 1 bytes @ 0x17
+   622  0059                     	ds	1
+   623  005A                     main@count:	
+   624                           
+   625                           ; 1 bytes @ 0x18
+   626  005A                     	ds	1
+   627                           
+   628                           	psect	maintext
+   629  002F                     __pmaintext:	
+   630 ;;
+   631 ;;Main: autosize = 0, tempsize = 5, incstack = 0, save=0
+   632 ;;
+   633 ;; *************** function _main *****************
+   634 ;; Defined at:
+   635 ;;		line 58 in file "main.c"
+   636 ;; Parameters:    Size  Location     Type
+   637 ;;		None
+   638 ;; Auto vars:     Size  Location     Type
+   639 ;;  i               1   21[BANK0 ] unsigned char 
+   640 ;;  i               1   22[BANK0 ] unsigned char 
+   641 ;;  i               1   23[BANK0 ] unsigned char 
+   642 ;;  count           1   24[BANK0 ] unsigned char 
+   643 ;; Return value:  Size  Location     Type
+   644 ;;                  1    wreg      void 
+   645 ;; Registers used:
+   646 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+   647 ;; Tracked objects:
+   648 ;;		On entry : B00/0
+   649 ;;		On exit  : 0/0
+   650 ;;		Unchanged: 0/0
+   651 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+   652 ;;      Params:         0       0       0       0
+   653 ;;      Locals:         0       4       0       0
+   654 ;;      Temps:          0       5       0       0
+   655 ;;      Totals:         0       9       0       0
+   656 ;;Total ram usage:        9 bytes
+   657 ;; Hardware stack levels required when called:    5
+   658 ;; This function calls:
+   659 ;;		___awdiv
+   660 ;;		_crc16
+   661 ;;		_eecpymem
+   662 ;;		_init_16f690
+   663 ;;		_memcpyee
+   664 ;;		_modbus_send
+   665 ;;		_process_cmd
+   666 ;; This function is called by:
+   667 ;;		Startup code after reset
+   668 ;; This function uses a non-reentrant model
+   669 ;;
+   670                           
+   671                           
+   672                           ;psect for function _main
+   673  002F                     _main:	
+   674                           
+   675                           ;main.c: 60: SWDTEN = 1;
+   676                           
+   677                           ;incstack = 0
+   678                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+   679  002F  1683               	bsf	3,5	;RP0=1, select bank1
+   680  0030  1303               	bcf	3,6	;RP1=0, select bank1
+   681  0031  1417               	bsf	23,0	;volatile
+   682                           
+   683                           ;main.c: 61: init_16f690();
+   684  0032  118A  21BE  118A   	fcall	_init_16f690
+   685                           
+   686                           ;main.c: 62: RB6 = 0;
+   687  0035  1283               	bcf	3,5	;RP0=0, select bank0
+   688  0036  1303               	bcf	3,6	;RP1=0, select bank0
+   689  0037  1306               	bcf	6,6	;volatile
+   690                           
+   691                           ;main.c: 63: RCIE = 1;
+   692  0038  1683               	bsf	3,5	;RP0=1, select bank1
+   693  0039  1303               	bcf	3,6	;RP1=0, select bank1
+   694  003A  168C               	bsf	12,5	;volatile
+   695                           
+   696                           ;main.c: 64: eecpymem(IO_RAM, 0x20, 27);
+   697  003B  3027               	movlw	(low (_IO_RAM| 0))& (0+255)
+   698  003C  1283               	bcf	3,5	;RP0=0, select bank0
+   699  003D  1303               	bcf	3,6	;RP1=0, select bank0
+   700  003E  00C2               	movwf	eecpymem@to
+   701  003F  3000               	movlw	0
+   702  0040  00C3               	movwf	eecpymem@to+1
+   703  0041  3020               	movlw	32
+   704  0042  00C4               	movwf	eecpymem@from
+   705  0043  3000               	movlw	0
+   706  0044  00C5               	movwf	eecpymem@from+1
+   707  0045  301B               	movlw	27
+   708  0046  00D2               	movwf	??_main
+   709  0047  0852               	movf	??_main,w
+   710  0048  00C6               	movwf	eecpymem@size
+   711  0049  118A  239F  118A   	fcall	_eecpymem
+   712                           
+   713                           ;main.c: 67: RB4 = 1;
+   714  004C  1283               	bcf	3,5	;RP0=0, select bank0
+   715  004D  1303               	bcf	3,6	;RP1=0, select bank0
+   716  004E  1606               	bsf	6,4	;volatile
+   717                           
+   718                           ;main.c: 68: RC_N =0;
+   719  004F  01A5               	clrf	_RC_N
+   720                           
+   721                           ;main.c: 69: FLAG_15 = 0;
+   722  0050  01A3               	clrf	_FLAG_15
+   723                           
+   724                           ;main.c: 70: FLAG_35 = 0;
+   725  0051  01F9               	clrf	_FLAG_35
+   726                           
+   727                           ;main.c: 71: FLAG_RCOK = 0;
+   728  0052  01A4               	clrf	_FLAG_RCOK
+   729                           
+   730                           ;main.c: 72: TMR1H =0xEB;
+   731  0053  30EB               	movlw	235
+   732  0054  008F               	movwf	15	;volatile
+   733                           
+   734                           ;main.c: 73: TMR1L =0xDC;
+   735  0055  30DC               	movlw	220
+   736  0056  008E               	movwf	14	;volatile
+   737                           
+   738                           ;main.c: 74: FLAG_T1 =1;
+   739  0057  01FA               	clrf	_FLAG_T1
+   740  0058  0AFA               	incf	_FLAG_T1,f
+   741                           
+   742                           ;main.c: 75: IO_RAM[26] = ~PORTA | 0xF0;
+   743  0059  0905               	comf	5,w	;volatile
+   744  005A  38F0               	iorlw	240
+   745  005B  00D2               	movwf	??_main
+   746  005C  0852               	movf	??_main,w
+   747  005D  00C1               	movwf	_IO_RAM+26
+   748                           
+   749                           ;main.c: 77: TMR1IE = 1;
+   750  005E  1683               	bsf	3,5	;RP0=1, select bank1
+   751  005F  1303               	bcf	3,6	;RP1=0, select bank1
+   752  0060  140C               	bsf	12,0	;volatile
+   753                           
+   754                           ;main.c: 78: TMR2IE = 1;
+   755  0061  148C               	bsf	12,1	;volatile
+   756                           
+   757                           ;main.c: 79: PEIE = 1;
+   758  0062  170B               	bsf	11,6	;volatile
+   759                           
+   760                           ;main.c: 80: GIE =1;
+   761  0063  178B               	bsf	11,7	;volatile
+   762  0064  0064               	clrwdt	;# 
+   763  0065                     l1504:	
+   764                           ;main.c: 83: while(1)
+   765                           
+   766                           
+   767                           ;main.c: 84: {
+   768                           ;main.c: 85: ADD = ( EEADR = 0x19, EECON1 &= 0x3F, RD = 1, EEDATA);
+   769  0065  3019               	movlw	25
+   770  0066  1283               	bcf	3,5	;RP0=0, select bank2
+   771  0067  1703               	bsf	3,6	;RP1=1, select bank2
+   772  0068  008D               	movwf	13	;volatile
+   773  0069  303F               	movlw	63
+   774  006A  1283               	bcf	3,5	;RP0=0, select bank0
+   775  006B  1303               	bcf	3,6	;RP1=0, select bank0
+   776  006C  00D2               	movwf	??_main
+   777  006D  0852               	movf	??_main,w
+   778  006E  1683               	bsf	3,5	;RP0=1, select bank3
+   779  006F  1703               	bsf	3,6	;RP1=1, select bank3
+   780  0070  058C               	andwf	12,f	;volsfr
+   781  0071  140C               	bsf	12,0	;volsfr
+   782  0072  1283               	bcf	3,5	;RP0=0, select bank2
+   783  0073  1703               	bsf	3,6	;RP1=1, select bank2
+   784  0074  080C               	movf	12,w	;volatile
+   785  0075  1283               	bcf	3,5	;RP0=0, select bank0
+   786  0076  1303               	bcf	3,6	;RP1=0, select bank0
+   787  0077  00D2               	movwf	??_main
+   788  0078  0852               	movf	??_main,w
+   789  0079  00A0               	movwf	_ADD
+   790                           
+   791                           ;main.c: 86: TX_DATA[0] = ADD;
+   792  007A  0820               	movf	_ADD,w
+   793  007B  00D2               	movwf	??_main
+   794  007C  0852               	movf	??_main,w
+   795  007D  1283               	bcf	3,5	;RP0=0, select bank2
+   796  007E  1703               	bsf	3,6	;RP1=1, select bank2
+   797  007F  00A0               	movwf	_TX_DATA^(0+256)
+   798                           
+   799                           ;main.c: 88: if( RC_N && FLAG_RCOK )
+   800  0080  1283               	bcf	3,5	;RP0=0, select bank0
+   801  0081  1303               	bcf	3,6	;RP1=0, select bank0
+   802  0082  0825               	movf	_RC_N,w
+   803  0083  1903               	btfsc	3,2
+   804  0084  2991               	goto	l92
+   805  0085  0824               	movf	_FLAG_RCOK,w
+   806  0086  1903               	btfsc	3,2
+   807  0087  2991               	goto	l92
+   808                           
+   809                           ;main.c: 89: {
+   810                           ;main.c: 90: crc16(RC_DATA,RC_N);
+   811  0088  30A0               	movlw	(low (_RC_DATA| 0))& (0+255)
+   812  0089  00C2               	movwf	crc16@recvByte
+   813  008A  3000               	movlw	0
+   814  008B  00C3               	movwf	crc16@recvByte+1
+   815  008C  0825               	movf	_RC_N,w
+   816  008D  00D2               	movwf	??_main
+   817  008E  0852               	movf	??_main,w
+   818  008F  00C4               	movwf	crc16@count
+   819  0090  118A  2315  118A   	fcall	_crc16
+   820                           
+   821                           ;main.c: 91: if( CRC_L == 0 && CRC_H == 0)
+   822  0093  1283               	bcf	3,5	;RP0=0, select bank0
+   823  0094  1303               	bcf	3,6	;RP1=0, select bank0
+   824  0095  0822               	movf	_CRC_L,w
+   825  0096  1D03               	btfss	3,2
+   826  0097  298D               	goto	l1574
+   827  0098  0821               	movf	_CRC_H,w
+   828  0099  1D03               	btfss	3,2
+   829  009A  298D               	goto	l1574
+   830                           
+   831                           ;main.c: 92: {
+   832                           ;main.c: 93: uint8_t count = 0;
+   833  009B  01DA               	clrf	main@count
+   834                           
+   835                           ;main.c: 94: count = RC_DATA[5] * 2;
+   836  009C  1683               	bsf	3,5	;RP0=1, select bank1
+   837  009D  1303               	bcf	3,6	;RP1=0, select bank1
+   838  009E  0825               	movf	(_RC_DATA^(0+128)+5),w
+   839  009F  1283               	bcf	3,5	;RP0=0, select bank0
+   840  00A0  1303               	bcf	3,6	;RP1=0, select bank0
+   841  00A1  00D2               	movwf	??_main
+   842  00A2  0752               	addwf	??_main,w
+   843  00A3  00D3               	movwf	??_main+1
+   844  00A4  0853               	movf	??_main+1,w
+   845  00A5  00DA               	movwf	main@count
+   846                           
+   847                           ;main.c: 95: if( RC_DATA[1] == 0x03 )
+   848  00A6  3003               	movlw	3
+   849  00A7  1683               	bsf	3,5	;RP0=1, select bank1
+   850  00A8  1303               	bcf	3,6	;RP1=0, select bank1
+   851  00A9  0621               	xorwf	(_RC_DATA^(0+128)+1),w
+   852  00AA  1D03               	btfss	3,2
+   853  00AB  2923               	goto	l1554
+   854                           
+   855                           ;main.c: 96: {
+   856                           ;main.c: 97: if(RC_DATA[2] == 0x04)
+   857  00AC  3004               	movlw	4
+   858  00AD  0622               	xorwf	(_RC_DATA^(0+128)+2),w
+   859  00AE  1D03               	btfss	3,2
+   860  00AF  28E9               	goto	l1544
+   861  00B0  0064               	clrwdt	;# 
+   862                           
+   863                           ;main.c: 100: for(char i = 0; i < count; i += 2)
+   864  00B1  1283               	bcf	3,5	;RP0=0, select bank0
+   865  00B2  1303               	bcf	3,6	;RP1=0, select bank0
+   866  00B3  01D8               	clrf	main@i
+   867  00B4                     l1542:	
+   868  00B4  085A               	movf	main@count,w
+   869  00B5  0258               	subwf	main@i,w
+   870  00B6  1803               	btfsc	3,0
+   871  00B7  2908               	goto	l1550
+   872                           
+   873                           ;main.c: 101: {
+   874                           ;main.c: 102: TX_DATA[i+3] = 0x00;
+   875  00B8  0858               	movf	main@i,w
+   876  00B9  3E03               	addlw	3
+   877  00BA  3E20               	addlw	(low (_TX_DATA| (0+256)))& (0+255)
+   878  00BB  0084               	movwf	4
+   879  00BC  1783               	bsf	3,7	;select IRP bank2
+   880  00BD  0180               	clrf	0
+   881                           
+   882                           ;main.c: 103: TX_DATA[i+4] = IO_RAM[ i/2 + RC_DATA[3]];
+   883  00BE  3002               	movlw	2
+   884  00BF  00C2               	movwf	___awdiv@divisor
+   885  00C0  3000               	movlw	0
+   886  00C1  00C3               	movwf	___awdiv@divisor+1
+   887  00C2  0858               	movf	main@i,w
+   888  00C3  00D2               	movwf	??_main
+   889  00C4  01D3               	clrf	??_main+1
+   890  00C5  0852               	movf	??_main,w
+   891  00C6  00C4               	movwf	___awdiv@dividend
+   892  00C7  0853               	movf	??_main+1,w
+   893  00C8  00C5               	movwf	___awdiv@dividend+1
+   894  00C9  118A  221B  118A   	fcall	___awdiv
+   895  00CC  1283               	bcf	3,5	;RP0=0, select bank0
+   896  00CD  1303               	bcf	3,6	;RP1=0, select bank0
+   897  00CE  0842               	movf	?___awdiv,w
+   898  00CF  00D4               	movwf	??_main+2
+   899  00D0  0843               	movf	?___awdiv+1,w
+   900  00D1  00D5               	movwf	??_main+3
+   901  00D2  1683               	bsf	3,5	;RP0=1, select bank1
+   902  00D3  1303               	bcf	3,6	;RP1=0, select bank1
+   903  00D4  0823               	movf	(_RC_DATA^(0+128)+3),w
+   904  00D5  1283               	bcf	3,5	;RP0=0, select bank0
+   905  00D6  1303               	bcf	3,6	;RP1=0, select bank0
+   906  00D7  0754               	addwf	??_main+2,w
+   907  00D8  3E27               	addlw	(low (_IO_RAM| 0))& (0+255)
+   908  00D9  0084               	movwf	4
+   909  00DA  1383               	bcf	3,7	;select IRP bank0
+   910  00DB  0800               	movf	0,w
+   911  00DC  00D6               	movwf	??_main+4
+   912  00DD  0858               	movf	main@i,w
+   913  00DE  3E04               	addlw	4
+   914  00DF  3E20               	addlw	(low (_TX_DATA| (0+256)))& (0+255)
+   915  00E0  0084               	movwf	4
+   916  00E1  0856               	movf	??_main+4,w
+   917  00E2  1783               	bsf	3,7	;select IRP bank2
+   918  00E3  0080               	movwf	0
+   919  00E4  3002               	movlw	2
+   920  00E5  00D2               	movwf	??_main
+   921  00E6  0852               	movf	??_main,w
+   922  00E7  07D8               	addwf	main@i,f
+   923  00E8  28B4               	goto	l1542
+   924  00E9                     l1544:	
+   925                           ;main.c: 104: }
+   926                           ;main.c: 105: }
+   927                           
+   928                           
+   929                           ;main.c: 106: else if( RC_DATA[2] ==0x00 )
+   930  00E9  1683               	bsf	3,5	;RP0=1, select bank1
+   931  00EA  1303               	bcf	3,6	;RP1=0, select bank1
+   932  00EB  0822               	movf	(_RC_DATA^(0+128)+2),w
+   933  00EC  1D03               	btfss	3,2
+   934  00ED  2908               	goto	l1550
+   935  00EE  0064               	clrwdt	;# 
+   936                           
+   937                           ;main.c: 109: eecpymem(TX_DATA+3, RC_DATA[3] * 2, count);
+   938  00EF  3023               	movlw	(low ((_TX_DATA| (0+256)+3)))& (0+255)
+   939  00F0  1283               	bcf	3,5	;RP0=0, select bank0
+   940  00F1  1303               	bcf	3,6	;RP1=0, select bank0
+   941  00F2  00C2               	movwf	eecpymem@to
+   942  00F3  3001               	movlw	1
+   943  00F4  00C3               	movwf	eecpymem@to+1
+   944  00F5  1683               	bsf	3,5	;RP0=1, select bank1
+   945  00F6  1303               	bcf	3,6	;RP1=0, select bank1
+   946  00F7  0823               	movf	(_RC_DATA^(0+128)+3),w
+   947  00F8  1283               	bcf	3,5	;RP0=0, select bank0
+   948  00F9  1303               	bcf	3,6	;RP1=0, select bank0
+   949  00FA  00D2               	movwf	??_main
+   950  00FB  01D3               	clrf	??_main+1
+   951  00FC  1003               	clrc
+   952  00FD  0D52               	rlf	??_main,w
+   953  00FE  00C4               	movwf	eecpymem@from
+   954  00FF  0D53               	rlf	??_main+1,w
+   955  0100  00C5               	movwf	eecpymem@from+1
+   956  0101  085A               	movf	main@count,w
+   957  0102  00D4               	movwf	??_main+2
+   958  0103  0854               	movf	??_main+2,w
+   959  0104  00C6               	movwf	eecpymem@size
+   960  0105  118A  239F  118A   	fcall	_eecpymem
+   961  0108                     l1550:	
+   962                           
+   963                           ;main.c: 110: }
+   964                           ;main.c: 111: TX_DATA[1] = RC_DATA[1];
+   965  0108  1683               	bsf	3,5	;RP0=1, select bank1
+   966  0109  1303               	bcf	3,6	;RP1=0, select bank1
+   967  010A  0821               	movf	(_RC_DATA^(0+128)+1),w
+   968  010B  1283               	bcf	3,5	;RP0=0, select bank0
+   969  010C  1303               	bcf	3,6	;RP1=0, select bank0
+   970  010D  00D2               	movwf	??_main
+   971  010E  0852               	movf	??_main,w
+   972  010F  1283               	bcf	3,5	;RP0=0, select bank2
+   973  0110  1703               	bsf	3,6	;RP1=1, select bank2
+   974  0111  00A1               	movwf	(_TX_DATA^(0+256)+1)
+   975                           
+   976                           ;main.c: 112: TX_DATA[2] = count;
+   977  0112  1283               	bcf	3,5	;RP0=0, select bank0
+   978  0113  1303               	bcf	3,6	;RP1=0, select bank0
+   979  0114  085A               	movf	main@count,w
+   980  0115  00D2               	movwf	??_main
+   981  0116  0852               	movf	??_main,w
+   982  0117  1283               	bcf	3,5	;RP0=0, select bank2
+   983  0118  1703               	bsf	3,6	;RP1=1, select bank2
+   984  0119  00A2               	movwf	(_TX_DATA^(0+256)+2)
+   985                           
+   986                           ;main.c: 113: modbus_send(TX_DATA, count+3);
+   987  011A  3020               	movlw	(low (_TX_DATA| (0+256)))& (0+255)
+   988  011B  1283               	bcf	3,5	;RP0=0, select bank0
+   989  011C  1303               	bcf	3,6	;RP1=0, select bank0
+   990  011D  00CC               	movwf	modbus_send@ptr
+   991  011E  3001               	movlw	1
+   992  011F  00CD               	movwf	modbus_send@ptr+1
+   993  0120  085A               	movf	main@count,w
+   994  0121  3E03               	addlw	3
+   995  0122  2987               	goto	L1
+   996  0123                     l1554:	
+   997                           ;main.c: 114: }
+   998                           
+   999                           
+  1000                           ;main.c: 115: else if( RC_DATA[1] ==0x10 )
+  1001  0123  3010               	movlw	16
+  1002  0124  1683               	bsf	3,5	;RP0=1, select bank1
+  1003  0125  1303               	bcf	3,6	;RP1=0, select bank1
+  1004  0126  0621               	xorwf	(_RC_DATA^(0+128)+1),w
+  1005  0127  1D03               	btfss	3,2
+  1006  0128  298D               	goto	l1574
+  1007                           
+  1008                           ;main.c: 116: {
+  1009                           ;main.c: 117: if(RC_DATA[2] ==0x04 )
+  1010  0129  3004               	movlw	4
+  1011  012A  0622               	xorwf	(_RC_DATA^(0+128)+2),w
+  1012  012B  1D03               	btfss	3,2
+  1013  012C  2963               	goto	l1568
+  1014                           
+  1015                           ;main.c: 118: {
+  1016                           ;main.c: 119: for(char i=0;i<count;i+=2)
+  1017  012D  1283               	bcf	3,5	;RP0=0, select bank0
+  1018  012E  1303               	bcf	3,6	;RP1=0, select bank0
+  1019  012F  01D7               	clrf	main@i_104
+  1020  0130                     l1564:	
+  1021  0130  085A               	movf	main@count,w
+  1022  0131  0257               	subwf	main@i_104,w
+  1023  0132  1803               	btfsc	3,0
+  1024  0133  295F               	goto	l1566
+  1025                           
+  1026                           ;main.c: 120: {
+  1027                           ;main.c: 121: IO_RAM[i/2+RC_DATA[3]] = RC_DATA[i+8];
+  1028  0134  0857               	movf	main@i_104,w
+  1029  0135  3E08               	addlw	8
+  1030  0136  3EA0               	addlw	(low (_RC_DATA| 0))& (0+255)
+  1031  0137  0084               	movwf	4
+  1032  0138  1383               	bcf	3,7	;select IRP bank1
+  1033  0139  0800               	movf	0,w
+  1034  013A  00D2               	movwf	??_main
+  1035  013B  3002               	movlw	2
+  1036  013C  00C2               	movwf	___awdiv@divisor
+  1037  013D  3000               	movlw	0
+  1038  013E  00C3               	movwf	___awdiv@divisor+1
+  1039  013F  0857               	movf	main@i_104,w
+  1040  0140  00D3               	movwf	??_main+1
+  1041  0141  01D4               	clrf	??_main+2
+  1042  0142  0853               	movf	??_main+1,w
+  1043  0143  00C4               	movwf	___awdiv@dividend
+  1044  0144  0854               	movf	??_main+2,w
+  1045  0145  00C5               	movwf	___awdiv@dividend+1
+  1046  0146  118A  221B  118A   	fcall	___awdiv
+  1047  0149  1283               	bcf	3,5	;RP0=0, select bank0
+  1048  014A  1303               	bcf	3,6	;RP1=0, select bank0
+  1049  014B  0842               	movf	?___awdiv,w
+  1050  014C  00D5               	movwf	??_main+3
+  1051  014D  0843               	movf	?___awdiv+1,w
+  1052  014E  00D6               	movwf	??_main+4
+  1053  014F  1683               	bsf	3,5	;RP0=1, select bank1
+  1054  0150  1303               	bcf	3,6	;RP1=0, select bank1
+  1055  0151  0823               	movf	(_RC_DATA^(0+128)+3),w
+  1056  0152  1283               	bcf	3,5	;RP0=0, select bank0
+  1057  0153  1303               	bcf	3,6	;RP1=0, select bank0
+  1058  0154  0755               	addwf	??_main+3,w
+  1059  0155  3E27               	addlw	(low (_IO_RAM| 0))& (0+255)
+  1060  0156  0084               	movwf	4
+  1061  0157  0852               	movf	??_main,w
+  1062  0158  1383               	bcf	3,7	;select IRP bank0
+  1063  0159  0080               	movwf	0
+  1064  015A  3002               	movlw	2
+  1065  015B  00D2               	movwf	??_main
+  1066  015C  0852               	movf	??_main,w
+  1067  015D  07D7               	addwf	main@i_104,f
+  1068  015E  2930               	goto	l1564
+  1069  015F                     l1566:	
+  1070                           
+  1071                           ;main.c: 122: }
+  1072                           ;main.c: 123: process_cmd();
+  1073  015F  118A  2413  118A   	fcall	_process_cmd
+  1074                           
+  1075                           ;main.c: 124: }
+  1076  0162  2980               	goto	l107
+  1077  0163                     l1568:	
+  1078                           
+  1079                           ;main.c: 125: else if( RC_DATA[2] ==0x00 )
+  1080  0163  1683               	bsf	3,5	;RP0=1, select bank1
+  1081  0164  1303               	bcf	3,6	;RP1=0, select bank1
+  1082  0165  0822               	movf	(_RC_DATA^(0+128)+2),w
+  1083  0166  1D03               	btfss	3,2
+  1084  0167  2980               	goto	l107
+  1085  0168  0064               	clrwdt	;# 
+  1086                           
+  1087                           ;main.c: 128: memcpyee(RC_DATA[3]*2, RC_DATA + 7, count);
+  1088  0169  1683               	bsf	3,5	;RP0=1, select bank1
+  1089  016A  1303               	bcf	3,6	;RP1=0, select bank1
+  1090  016B  0823               	movf	(_RC_DATA^(0+128)+3),w
+  1091  016C  1283               	bcf	3,5	;RP0=0, select bank0
+  1092  016D  1303               	bcf	3,6	;RP1=0, select bank0
+  1093  016E  00D2               	movwf	??_main
+  1094  016F  01D3               	clrf	??_main+1
+  1095  0170  1003               	clrc
+  1096  0171  0D52               	rlf	??_main,w
+  1097  0172  00C2               	movwf	memcpyee@to
+  1098  0173  0D53               	rlf	??_main+1,w
+  1099  0174  00C3               	movwf	memcpyee@to+1
+  1100  0175  30A7               	movlw	(low ((_RC_DATA| 0+7)))& (0+255)
+  1101  0176  00D4               	movwf	??_main+2
+  1102  0177  0854               	movf	??_main+2,w
+  1103  0178  00C4               	movwf	memcpyee@from
+  1104  0179  085A               	movf	main@count,w
+  1105  017A  00D5               	movwf	??_main+3
+  1106  017B  0855               	movf	??_main+3,w
+  1107  017C  00C5               	movwf	memcpyee@size
+  1108  017D  118A  22C7  118A   	fcall	_memcpyee
+  1109  0180                     l107:	
+  1110                           
+  1111                           ;main.c: 129: }
+  1112                           ;main.c: 130: modbus_send(RC_DATA,6);
+  1113  0180  30A0               	movlw	(low (_RC_DATA| 0))& (0+255)
+  1114  0181  1283               	bcf	3,5	;RP0=0, select bank0
+  1115  0182  1303               	bcf	3,6	;RP1=0, select bank0
+  1116  0183  00CC               	movwf	modbus_send@ptr
+  1117  0184  3000               	movlw	0
+  1118  0185  00CD               	movwf	modbus_send@ptr+1
+  1119  0186  3006               	movlw	6
+  1120  0187                     L1:	
+  1121  0187  00D2               	movwf	??_main
+  1122  0188  0852               	movf	??_main,w
+  1123  0189  00CE               	movwf	modbus_send@len
+  1124  018A  118A  235E  118A   	fcall	_modbus_send
+  1125  018D                     l1574:	
+  1126                           
+  1127                           ;main.c: 131: }
+  1128                           ;main.c: 132: }
+  1129                           ;main.c: 133: RC_N =0;
+  1130  018D  1283               	bcf	3,5	;RP0=0, select bank0
+  1131  018E  1303               	bcf	3,6	;RP1=0, select bank0
+  1132  018F  01A5               	clrf	_RC_N
+  1133                           
+  1134                           ;main.c: 134: FLAG_RCOK =0;
+  1135  0190  01A4               	clrf	_FLAG_RCOK
+  1136  0191                     l92:	
+  1137  0191  0064               	clrwdt	;# 
+  1138                           
+  1139                           ;main.c: 140: if(FLAG_IOCHANGE)
+  1140  0192  1283               	bcf	3,5	;RP0=0, select bank0
+  1141  0193  1303               	bcf	3,6	;RP1=0, select bank0
+  1142  0194  085B               	movf	_FLAG_IOCHANGE,w
+  1143  0195  1903               	btfsc	3,2
+  1144  0196  2865               	goto	l1504
+  1145                           
+  1146                           ;main.c: 141: {
+  1147                           ;main.c: 142: TMR2ON = 1;
+  1148  0197  1512               	bsf	18,2	;volatile
+  1149                           
+  1150                           ;main.c: 143: if(tmr2DelayCnt > 17)
+  1151  0198  3012               	movlw	18
+  1152  0199  0226               	subwf	_tmr2DelayCnt,w
+  1153  019A  1C03               	skipc
+  1154  019B  2865               	goto	l1504
+  1155                           
+  1156                           ;main.c: 144: {
+  1157                           ;main.c: 145: FLAG_IOCHANGE = 0;
+  1158  019C  01DB               	clrf	_FLAG_IOCHANGE
+  1159                           
+  1160                           ;main.c: 146: TMR2ON = 0;
+  1161  019D  1112               	bcf	18,2	;volatile
+  1162  019E  0064               	clrwdt	;# 
+  1163                           
+  1164                           ;main.c: 148: for( char i = 0; i < 8 ; i++ )
+  1165  019F  1283               	bcf	3,5	;RP0=0, select bank0
+  1166  01A0  1303               	bcf	3,6	;RP1=0, select bank0
+  1167  01A1  01D9               	clrf	main@i_105
+  1168  01A2                     L2:	
+  1169  01A2  3008               	movlw	8
+  1170  01A3  0259               	subwf	main@i_105,w
+  1171  01A4  1803               	btfsc	3,0
+  1172  01A5  2865               	goto	l1504
+  1173                           
+  1174                           ;main.c: 149: {
+  1175                           ;main.c: 150: IO_RAM[i+0x10] = ( IO_RAM[26]>>i ) & 0x01 ;
+  1176  01A6  0841               	movf	_IO_RAM+26,w
+  1177  01A7  00D2               	movwf	??_main
+  1178  01A8  0A59               	incf	main@i_105,w
+  1179  01A9  29AC               	goto	u1044
+  1180  01AA                     u1045:	
+  1181  01AA  1003               	clrc
+  1182  01AB  0CD2               	rrf	??_main,f
+  1183  01AC                     u1044:	
+  1184  01AC  3EFF               	addlw	-1
+  1185  01AD  1D03               	skipz
+  1186  01AE  29AA               	goto	u1045
+  1187  01AF  0852               	movf	??_main,w
+  1188  01B0  3901               	andlw	1
+  1189  01B1  00D3               	movwf	??_main+1
+  1190  01B2  0859               	movf	main@i_105,w
+  1191  01B3  3E10               	addlw	16
+  1192  01B4  3E27               	addlw	(low (_IO_RAM| 0))& (0+255)
+  1193  01B5  0084               	movwf	4
+  1194  01B6  0853               	movf	??_main+1,w
+  1195  01B7  1383               	bcf	3,7	;select IRP bank0
+  1196  01B8  0080               	movwf	0
+  1197  01B9  3001               	movlw	1
+  1198  01BA  00D2               	movwf	??_main
+  1199  01BB  0852               	movf	??_main,w
+  1200  01BC  07D9               	addwf	main@i_105,f
+  1201  01BD  29A2               	goto	L2
+  1202  01BE                     __end_of_main:	
+  1203                           
+  1204                           	psect	text1
+  1205  0413                     __ptext1:	
+  1206 ;; *************** function _process_cmd *****************
+  1207 ;; Defined at:
+  1208 ;;		line 211 in file "main.c"
+  1209 ;; Parameters:    Size  Location     Type
+  1210 ;;		None
+  1211 ;; Auto vars:     Size  Location     Type
+  1212 ;;  i               1    3[BANK0 ] unsigned char 
+  1213 ;;  portc           1    2[BANK0 ] unsigned char 
+  1214 ;;  temp            1    1[BANK0 ] unsigned char 
+  1215 ;; Return value:  Size  Location     Type
+  1216 ;;                  1    wreg      void 
+  1217 ;; Registers used:
+  1218 ;;		wreg, fsr0l, fsr0h, status,2, status,0
+  1219 ;; Tracked objects:
+  1220 ;;		On entry : 0/0
+  1221 ;;		On exit  : 0/0
+  1222 ;;		Unchanged: 0/0
+  1223 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  1224 ;;      Params:         0       0       0       0
+  1225 ;;      Locals:         0       3       0       0
+  1226 ;;      Temps:          0       1       0       0
+  1227 ;;      Totals:         0       4       0       0
+  1228 ;;Total ram usage:        4 bytes
+  1229 ;; Hardware stack levels used:    1
+  1230 ;; Hardware stack levels required when called:    3
+  1231 ;; This function calls:
+  1232 ;;		Nothing
+  1233 ;; This function is called by:
+  1234 ;;		_main
+  1235 ;; This function uses a non-reentrant model
+  1236 ;;
+  1237                           
+  1238                           
+  1239                           ;psect for function _process_cmd
+  1240  0413                     _process_cmd:	
+  1241                           
+  1242                           ;main.c: 213: unsigned char portc = 0;
+  1243                           
+  1244                           ;incstack = 0
+  1245                           ; Regs used in _process_cmd: [wreg-fsr0h+status,2+status,0]
+  1246  0413  1283               	bcf	3,5	;RP0=0, select bank0
+  1247  0414  1303               	bcf	3,6	;RP1=0, select bank0
+  1248  0415  01C4               	clrf	process_cmd@portc
+  1249                           
+  1250                           ;main.c: 214: unsigned char temp;
+  1251                           ;main.c: 215: for(char i=0;i<8;i++)
+  1252  0416  01C5               	clrf	process_cmd@i
+  1253  0417  3008               	movlw	8
+  1254  0418  0245               	subwf	process_cmd@i,w
+  1255  0419  1803               	btfsc	3,0
+  1256  041A  2C2F               	goto	l1364
+  1257                           
+  1258                           ;main.c: 216: {
+  1259                           ;main.c: 217: portc <<= 1;
+  1260  041B  1003               	clrc
+  1261  041C                     L3:	
+  1262  041C  0DC4               	rlf	process_cmd@portc,f
+  1263                           
+  1264                           ;main.c: 218: portc += IO_RAM[ 7-i ];
+  1265  041D  0345               	decf	process_cmd@i,w
+  1266  041E  3AFF               	xorlw	255
+  1267  041F  3E07               	addlw	7
+  1268  0420  3E27               	addlw	(low (_IO_RAM| 0))& (0+255)
+  1269  0421  0084               	movwf	4
+  1270  0422  1383               	bcf	3,7	;select IRP bank0
+  1271  0423  0800               	movf	0,w
+  1272  0424  00C2               	movwf	??_process_cmd
+  1273  0425  0842               	movf	??_process_cmd,w
+  1274  0426  07C4               	addwf	process_cmd@portc,f
+  1275  0427  3001               	movlw	1
+  1276  0428  00C2               	movwf	??_process_cmd
+  1277  0429  0842               	movf	??_process_cmd,w
+  1278  042A  07C5               	addwf	process_cmd@i,f
+  1279  042B  3008               	movlw	8
+  1280  042C  0245               	subwf	process_cmd@i,w
+  1281  042D  1C03               	skipc
+  1282  042E  2C1C               	goto	L3
+  1283  042F                     l1364:	
+  1284                           
+  1285                           ;main.c: 219: }
+  1286                           ;main.c: 220: IO_RAM[24] = (portc & 0xFF);
+  1287  042F  0844               	movf	process_cmd@portc,w
+  1288  0430  00C2               	movwf	??_process_cmd
+  1289  0431  0842               	movf	??_process_cmd,w
+  1290  0432  00BF               	movwf	_IO_RAM+24
+  1291                           
+  1292                           ;main.c: 221: temp = (PORTC & ~0xFF);
+  1293  0433  01C3               	clrf	process_cmd@temp
+  1294                           
+  1295                           ;main.c: 222: PORTC = (portc & 0xFF)|temp;
+  1296  0434  0844               	movf	process_cmd@portc,w
+  1297  0435  0443               	iorwf	process_cmd@temp,w
+  1298  0436  0087               	movwf	7	;volatile
+  1299  0437  0008               	return
+  1300  0438                     __end_of_process_cmd:	
+  1301                           
+  1302                           	psect	text2
+  1303  035E                     __ptext2:	
+  1304 ;; *************** function _modbus_send *****************
+  1305 ;; Defined at:
+  1306 ;;		line 23 in file "init_modbus.c"
+  1307 ;; Parameters:    Size  Location     Type
+  1308 ;;  ptr             2   10[BANK0 ] PTR unsigned char 
+  1309 ;;		 -> RC_DATA(60), TX_DATA(60), 
+  1310 ;;  len             1   12[BANK0 ] unsigned char 
+  1311 ;; Auto vars:     Size  Location     Type
+  1312 ;;  i               1   15[BANK0 ] unsigned char 
+  1313 ;; Return value:  Size  Location     Type
+  1314 ;;                  1    wreg      void 
+  1315 ;; Registers used:
+  1316 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+  1317 ;; Tracked objects:
+  1318 ;;		On entry : 0/0
+  1319 ;;		On exit  : 0/0
+  1320 ;;		Unchanged: 0/0
+  1321 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  1322 ;;      Params:         0       3       0       0
+  1323 ;;      Locals:         0       1       0       0
+  1324 ;;      Temps:          0       2       0       0
+  1325 ;;      Totals:         0       6       0       0
+  1326 ;;Total ram usage:        6 bytes
+  1327 ;; Hardware stack levels used:    1
+  1328 ;; Hardware stack levels required when called:    4
+  1329 ;; This function calls:
+  1330 ;;		_crc16
+  1331 ;;		_send_one
+  1332 ;; This function is called by:
+  1333 ;;		_main
+  1334 ;; This function uses a non-reentrant model
+  1335 ;;
+  1336                           
+  1337                           
+  1338                           ;psect for function _modbus_send
+  1339  035E                     _modbus_send:	
+  1340                           
+  1341                           ;init_modbus.c: 25: crc16(ptr,len);
+  1342                           
+  1343                           ;incstack = 0
+  1344                           ; Regs used in _modbus_send: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+  1345  035E  1283               	bcf	3,5	;RP0=0, select bank0
+  1346  035F  1303               	bcf	3,6	;RP1=0, select bank0
+  1347  0360  084C               	movf	modbus_send@ptr,w
+  1348  0361  00C2               	movwf	crc16@recvByte
+  1349  0362  084D               	movf	modbus_send@ptr+1,w
+  1350  0363  00C3               	movwf	crc16@recvByte+1
+  1351  0364  084E               	movf	modbus_send@len,w
+  1352  0365  00CF               	movwf	??_modbus_send
+  1353  0366  084F               	movf	??_modbus_send,w
+  1354  0367  00C4               	movwf	crc16@count
+  1355  0368  118A  2315  118A   	fcall	_crc16
+  1356                           
+  1357                           ;init_modbus.c: 26: RB6 = 1;
+  1358  036B  1283               	bcf	3,5	;RP0=0, select bank0
+  1359  036C  1303               	bcf	3,6	;RP1=0, select bank0
+  1360  036D  1706               	bsf	6,6	;volatile
+  1361                           
+  1362                           ;init_modbus.c: 27: TMR1IE = 0;
+  1363  036E  1683               	bsf	3,5	;RP0=1, select bank1
+  1364  036F  1303               	bcf	3,6	;RP1=0, select bank1
+  1365  0370  100C               	bcf	12,0	;volatile
+  1366                           
+  1367                           ;init_modbus.c: 28: for(char i = 0; i < len; i++)
+  1368  0371  1283               	bcf	3,5	;RP0=0, select bank0
+  1369  0372  1303               	bcf	3,6	;RP1=0, select bank0
+  1370  0373  01D1               	clrf	modbus_send@i
+  1371  0374                     l1342:	
+  1372  0374  084E               	movf	modbus_send@len,w
+  1373  0375  0251               	subwf	modbus_send@i,w
+  1374  0376  1803               	btfsc	3,0
+  1375  0377  2B8F               	goto	l1344
+  1376                           
+  1377                           ;init_modbus.c: 29: {
+  1378                           ;init_modbus.c: 30: send_one(ptr[i]);
+  1379  0378  0851               	movf	modbus_send@i,w
+  1380  0379  074C               	addwf	modbus_send@ptr,w
+  1381  037A  00CF               	movwf	??_modbus_send
+  1382  037B  084D               	movf	modbus_send@ptr+1,w
+  1383  037C  1803               	skipnc
+  1384  037D  3E01               	addlw	1
+  1385  037E  00D0               	movwf	??_modbus_send+1
+  1386  037F  084F               	movf	??_modbus_send,w
+  1387  0380  0084               	movwf	4
+  1388  0381  1783               	bsf	3,7
+  1389  0382  1C50               	btfss	??_modbus_send+1,0
+  1390  0383  1383               	bcf	3,7
+  1391  0384  0800               	movf	0,w
+  1392  0385  118A  245A  118A   	fcall	_send_one
+  1393  0388  3001               	movlw	1
+  1394  0389  1283               	bcf	3,5	;RP0=0, select bank0
+  1395  038A  1303               	bcf	3,6	;RP1=0, select bank0
+  1396  038B  00CF               	movwf	??_modbus_send
+  1397  038C  084F               	movf	??_modbus_send,w
+  1398  038D  07D1               	addwf	modbus_send@i,f
+  1399  038E  2B74               	goto	l1342
+  1400  038F                     l1344:	
+  1401                           
+  1402                           ;init_modbus.c: 31: }
+  1403                           ;init_modbus.c: 32: send_one(CRC_L);
+  1404  038F  0822               	movf	_CRC_L,w
+  1405  0390  118A  245A  118A   	fcall	_send_one
+  1406                           
+  1407                           ;init_modbus.c: 33: send_one(CRC_H);
+  1408  0393  1283               	bcf	3,5	;RP0=0, select bank0
+  1409  0394  1303               	bcf	3,6	;RP1=0, select bank0
+  1410  0395  0821               	movf	_CRC_H,w
+  1411  0396  118A  245A         	fcall	_send_one
+  1412                           
+  1413                           ;init_modbus.c: 34: RB6 = 0;
+  1414  0398  1283               	bcf	3,5	;RP0=0, select bank0
+  1415  0399  1303               	bcf	3,6	;RP1=0, select bank0
+  1416  039A  1306               	bcf	6,6	;volatile
+  1417                           
+  1418                           ;init_modbus.c: 35: TMR1IE = 1;
+  1419  039B  1683               	bsf	3,5	;RP0=1, select bank1
+  1420  039C  1303               	bcf	3,6	;RP1=0, select bank1
+  1421  039D  140C               	bsf	12,0	;volatile
+  1422  039E  0008               	return
+  1423  039F                     __end_of_modbus_send:	
+  1424                           
+  1425                           	psect	text3
+  1426  045A                     __ptext3:	
+  1427 ;; *************** function _send_one *****************
+  1428 ;; Defined at:
+  1429 ;;		line 10 in file "init_modbus.c"
+  1430 ;; Parameters:    Size  Location     Type
+  1431 ;;  a               1    wreg     unsigned char 
+  1432 ;; Auto vars:     Size  Location     Type
+  1433 ;;  a               1    0[BANK0 ] unsigned char 
+  1434 ;; Return value:  Size  Location     Type
+  1435 ;;                  1    wreg      void 
+  1436 ;; Registers used:
+  1437 ;;		wreg
+  1438 ;; Tracked objects:
+  1439 ;;		On entry : 0/0
+  1440 ;;		On exit  : 0/0
+  1441 ;;		Unchanged: 0/0
+  1442 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  1443 ;;      Params:         0       0       0       0
+  1444 ;;      Locals:         0       1       0       0
+  1445 ;;      Temps:          0       0       0       0
+  1446 ;;      Totals:         0       1       0       0
+  1447 ;;Total ram usage:        1 bytes
+  1448 ;; Hardware stack levels used:    1
+  1449 ;; Hardware stack levels required when called:    3
+  1450 ;; This function calls:
+  1451 ;;		Nothing
+  1452 ;; This function is called by:
+  1453 ;;		_modbus_send
+  1454 ;; This function uses a non-reentrant model
+  1455 ;;
+  1456                           
+  1457                           
+  1458                           ;psect for function _send_one
+  1459  045A                     _send_one:	
+  1460                           
+  1461                           ;incstack = 0
+  1462                           ; Regs used in _send_one: [wreg]
+  1463                           ;send_one@a stored from wreg
+  1464  045A  1283               	bcf	3,5	;RP0=0, select bank0
+  1465  045B  1303               	bcf	3,6	;RP1=0, select bank0
+  1466  045C  00C2               	movwf	send_one@a
+  1467                           
+  1468                           ;init_modbus.c: 12: TXREG =a;
+  1469  045D  0842               	movf	send_one@a,w
+  1470  045E  0099               	movwf	25	;volatile
+  1471  045F                     l170:	
+  1472                           ;init_modbus.c: 13: while(!TRMT);
+  1473                           
+  1474  045F  1683               	bsf	3,5	;RP0=1, select bank1
+  1475  0460  1303               	bcf	3,6	;RP1=0, select bank1
+  1476  0461  1898               	btfsc	24,1	;volatile
+  1477  0462  0008               	return
+  1478  0463  2C5F               	goto	l170
+  1479  0464                     __end_of_send_one:	
+  1480                           
+  1481                           	psect	text4
+  1482  0315                     __ptext4:	
+  1483 ;; *************** function _crc16 *****************
+  1484 ;; Defined at:
+  1485 ;;		line 77 in file "init_modbus.c"
+  1486 ;; Parameters:    Size  Location     Type
+  1487 ;;  recvByte        2    0[BANK0 ] PTR unsigned char 
+  1488 ;;		 -> RC_DATA(60), TX_DATA(60), 
+  1489 ;;  count           1    2[BANK0 ] unsigned char 
+  1490 ;; Auto vars:     Size  Location     Type
+  1491 ;;  i               1    9[BANK0 ] unsigned char 
+  1492 ;;  n               1    8[BANK0 ] unsigned char 
+  1493 ;;  saveHi          1    7[BANK0 ] unsigned char 
+  1494 ;;  saveLo          1    6[BANK0 ] unsigned char 
+  1495 ;; Return value:  Size  Location     Type
+  1496 ;;                  1    wreg      void 
+  1497 ;; Registers used:
+  1498 ;;		wreg, fsr0l, fsr0h, status,2, status,0
+  1499 ;; Tracked objects:
+  1500 ;;		On entry : 0/0
+  1501 ;;		On exit  : 0/0
+  1502 ;;		Unchanged: 0/0
+  1503 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  1504 ;;      Params:         0       3       0       0
+  1505 ;;      Locals:         0       4       0       0
+  1506 ;;      Temps:          0       3       0       0
+  1507 ;;      Totals:         0      10       0       0
+  1508 ;;Total ram usage:       10 bytes
+  1509 ;; Hardware stack levels used:    1
+  1510 ;; Hardware stack levels required when called:    3
+  1511 ;; This function calls:
+  1512 ;;		Nothing
+  1513 ;; This function is called by:
+  1514 ;;		_main
+  1515 ;;		_modbus_send
+  1516 ;; This function uses a non-reentrant model
+  1517 ;;
+  1518                           
+  1519                           
+  1520                           ;psect for function _crc16
+  1521  0315                     _crc16:	
+  1522                           
+  1523                           ;init_modbus.c: 79: unsigned char saveLo, saveHi;
+  1524                           ;init_modbus.c: 80: CRC_L = 0xFF;
+  1525                           
+  1526                           ;incstack = 0
+  1527                           ; Regs used in _crc16: [wreg-fsr0h+status,2+status,0]
+  1528  0315  30FF               	movlw	255
+  1529  0316  1283               	bcf	3,5	;RP0=0, select bank0
+  1530  0317  1303               	bcf	3,6	;RP1=0, select bank0
+  1531  0318  00C5               	movwf	??_crc16
+  1532  0319  0845               	movf	??_crc16,w
+  1533  031A  00A2               	movwf	_CRC_L
+  1534                           
+  1535                           ;init_modbus.c: 81: CRC_H = 0xFF;
+  1536  031B  30FF               	movlw	255
+  1537  031C  00C5               	movwf	??_crc16
+  1538  031D  0845               	movf	??_crc16,w
+  1539  031E  00A1               	movwf	_CRC_H
+  1540                           
+  1541                           ;init_modbus.c: 83: for (unsigned char n = 0; n < count; n++)
+  1542  031F  01CA               	clrf	crc16@n
+  1543  0320                     l1222:	
+  1544  0320  0844               	movf	crc16@count,w
+  1545  0321  024A               	subwf	crc16@n,w
+  1546  0322  1803               	btfsc	3,0
+  1547  0323  0008               	return
+  1548                           
+  1549                           ;init_modbus.c: 84: {
+  1550                           ;init_modbus.c: 85: CRC_L ^= recvByte[n];
+  1551  0324  084A               	movf	crc16@n,w
+  1552  0325  0742               	addwf	crc16@recvByte,w
+  1553  0326  00C5               	movwf	??_crc16
+  1554  0327  0843               	movf	crc16@recvByte+1,w
+  1555  0328  1803               	skipnc
+  1556  0329  3E01               	addlw	1
+  1557  032A  00C6               	movwf	??_crc16+1
+  1558  032B  0845               	movf	??_crc16,w
+  1559  032C  0084               	movwf	4
+  1560  032D  1783               	bsf	3,7
+  1561  032E  1C46               	btfss	??_crc16+1,0
+  1562  032F  1383               	bcf	3,7
+  1563  0330  0800               	movf	0,w
+  1564  0331  00C7               	movwf	??_crc16+2
+  1565  0332  0847               	movf	??_crc16+2,w
+  1566  0333  06A2               	xorwf	_CRC_L,f
+  1567                           
+  1568                           ;init_modbus.c: 86: for (char i = 0; i < 8; i++)
+  1569  0334  01CB               	clrf	crc16@i
+  1570  0335  3008               	movlw	8
+  1571  0336  024B               	subwf	crc16@i,w
+  1572  0337  1803               	btfsc	3,0
+  1573  0338  2B59               	goto	l1220
+  1574  0339                     l1210:	
+  1575                           
+  1576                           ;init_modbus.c: 87: {
+  1577                           ;init_modbus.c: 88: saveHi = CRC_H;
+  1578  0339  0821               	movf	_CRC_H,w
+  1579  033A  00C5               	movwf	??_crc16
+  1580  033B  0845               	movf	??_crc16,w
+  1581  033C  00C9               	movwf	crc16@saveHi
+  1582                           
+  1583                           ;init_modbus.c: 89: saveLo = CRC_L;
+  1584  033D  0822               	movf	_CRC_L,w
+  1585  033E  00C5               	movwf	??_crc16
+  1586  033F  0845               	movf	??_crc16,w
+  1587  0340  00C8               	movwf	crc16@saveLo
+  1588                           
+  1589                           ;init_modbus.c: 90: CRC_H >>= 1;
+  1590  0341  1003               	clrc
+  1591  0342  0CA1               	rrf	_CRC_H,f
+  1592                           
+  1593                           ;init_modbus.c: 91: CRC_L >>= 1;
+  1594  0343  1003               	clrc
+  1595  0344  0CA2               	rrf	_CRC_L,f
+  1596                           
+  1597                           ;init_modbus.c: 92: if ((saveHi & 0x01) == 0x01)
+  1598  0345  1849               	btfsc	crc16@saveHi,0
+  1599                           
+  1600                           ;init_modbus.c: 93: {
+  1601                           ;init_modbus.c: 94: CRC_L |= 0x80;
+  1602  0346  17A2               	bsf	_CRC_L,7
+  1603                           
+  1604                           ;init_modbus.c: 95: }
+  1605                           ;init_modbus.c: 96: if ((saveLo & 0x01) == 0x01)
+  1606  0347  1C48               	btfss	crc16@saveLo,0
+  1607  0348  2B51               	goto	l195
+  1608                           
+  1609                           ;init_modbus.c: 97: {
+  1610                           ;init_modbus.c: 98: CRC_H ^= 0xA0;
+  1611  0349  30A0               	movlw	160
+  1612  034A  00C5               	movwf	??_crc16
+  1613  034B  0845               	movf	??_crc16,w
+  1614  034C  06A1               	xorwf	_CRC_H,f
+  1615                           
+  1616                           ;init_modbus.c: 99: CRC_L ^= 0x01;
+  1617  034D  3001               	movlw	1
+  1618  034E  00C5               	movwf	??_crc16
+  1619  034F  0845               	movf	??_crc16,w
+  1620  0350  06A2               	xorwf	_CRC_L,f
+  1621  0351                     l195:	
+  1622  0351  3001               	movlw	1
+  1623  0352  00C5               	movwf	??_crc16
+  1624  0353  0845               	movf	??_crc16,w
+  1625  0354  07CB               	addwf	crc16@i,f
+  1626  0355  3008               	movlw	8
+  1627  0356  024B               	subwf	crc16@i,w
+  1628  0357  1C03               	skipc
+  1629  0358  2B39               	goto	l1210
+  1630  0359                     l1220:	
+  1631  0359  3001               	movlw	1
+  1632  035A  00C5               	movwf	??_crc16
+  1633  035B  0845               	movf	??_crc16,w
+  1634  035C  07CA               	addwf	crc16@n,f
+  1635  035D  2B20               	goto	l1222
+  1636  035E                     __end_of_crc16:	
+  1637                           
+  1638                           	psect	text5
+  1639  02C7                     __ptext5:	
+  1640 ;; *************** function _memcpyee *****************
+  1641 ;; Defined at:
+  1642 ;;		line 39 in file "E:\Program Files (x86)\Microchip\xc8\v1.38\sources\pic\eeprom.c"
+  1643 ;; Parameters:    Size  Location     Type
+  1644 ;;  to              2    0[BANK0 ] PTR eeprom unsigned char
+  1645 ;;		 -> RAM(512), 
+  1646 ;;  from            1    2[BANK0 ] PTR const unsigned char 
+  1647 ;;		 -> __fltoee@data(3), __fttoee@data(3), __ltoee@data(4), __mtoee@data(3), 
+  1648 ;;		 -> __itoee@data(2), __ctoee@data(1), RC_DATA(60), 
+  1649 ;;  size            1    3[BANK0 ] unsigned char 
+  1650 ;; Auto vars:     Size  Location     Type
+  1651 ;;  ptr             1    5[BANK0 ] PTR const unsigned char 
+  1652 ;;		 -> __fltoee@data(3), __fttoee@data(3), __ltoee@data(4), __mtoee@data(3), 
+  1653 ;;		 -> __itoee@data(2), __ctoee@data(1), RC_DATA(60), 
+  1654 ;; Return value:  Size  Location     Type
+  1655 ;;                  1    wreg      void 
+  1656 ;; Registers used:
+  1657 ;;		wreg, fsr0l, fsr0h, status,2, status,0
+  1658 ;; Tracked objects:
+  1659 ;;		On entry : 0/0
+  1660 ;;		On exit  : 0/0
+  1661 ;;		Unchanged: 0/0
+  1662 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  1663 ;;      Params:         0       4       0       0
+  1664 ;;      Locals:         0       1       0       0
+  1665 ;;      Temps:          0       1       0       0
+  1666 ;;      Totals:         0       6       0       0
+  1667 ;;Total ram usage:        6 bytes
+  1668 ;; Hardware stack levels used:    1
+  1669 ;; Hardware stack levels required when called:    3
+  1670 ;; This function calls:
+  1671 ;;		Nothing
+  1672 ;; This function is called by:
+  1673 ;;		_main
+  1674 ;; This function uses a non-reentrant model
+  1675 ;;
+  1676                           
+  1677                           
+  1678                           ;psect for function _memcpyee
+  1679  02C7                     _memcpyee:	
+  1680                           
+  1681                           ;incstack = 0
+  1682                           ; Regs used in _memcpyee: [wreg-fsr0h+status,2+status,0]
+  1683  02C7  1283               	bcf	3,5	;RP0=0, select bank0
+  1684  02C8  1303               	bcf	3,6	;RP1=0, select bank0
+  1685  02C9  0844               	movf	memcpyee@from,w
+  1686  02CA  00C6               	movwf	??_memcpyee
+  1687  02CB  0846               	movf	??_memcpyee,w
+  1688  02CC  00C7               	movwf	memcpyee@ptr
+  1689  02CD                     l323:	
+  1690  02CD  1683               	bsf	3,5	;RP0=1, select bank3
+  1691  02CE  1703               	bsf	3,6	;RP1=1, select bank3
+  1692  02CF  188C               	btfsc	12,1	;volsfr
+  1693  02D0  2ACD               	goto	l323
+  1694  02D1  1283               	bcf	3,5	;RP0=0, select bank0
+  1695  02D2  1303               	bcf	3,6	;RP1=0, select bank0
+  1696  02D3  0842               	movf	memcpyee@to,w
+  1697  02D4  3EFF               	addlw	255
+  1698  02D5  1283               	bcf	3,5	;RP0=0, select bank2
+  1699  02D6  1703               	bsf	3,6	;RP1=1, select bank2
+  1700  02D7  008D               	movwf	13	;volatile
+  1701  02D8  307F               	movlw	127
+  1702  02D9  1283               	bcf	3,5	;RP0=0, select bank0
+  1703  02DA  1303               	bcf	3,6	;RP1=0, select bank0
+  1704  02DB  00C6               	movwf	??_memcpyee
+  1705  02DC  0846               	movf	??_memcpyee,w
+  1706  02DD  1683               	bsf	3,5	;RP0=1, select bank3
+  1707  02DE  1703               	bsf	3,6	;RP1=1, select bank3
+  1708  02DF  058C               	andwf	12,f	;volsfr
+  1709  02E0                     l1396:	
+  1710  02E0  3001               	movlw	1
+  1711  02E1  1283               	bcf	3,5	;RP0=0, select bank0
+  1712  02E2  1303               	bcf	3,6	;RP1=0, select bank0
+  1713  02E3  02C5               	subwf	memcpyee@size,f
+  1714  02E4  0A45               	incf	memcpyee@size,w
+  1715  02E5  1903               	btfsc	3,2
+  1716  02E6  0008               	return
+  1717  02E7                     l328:	
+  1718  02E7  1683               	bsf	3,5	;RP0=1, select bank3
+  1719  02E8  1703               	bsf	3,6	;RP1=1, select bank3
+  1720  02E9  188C               	btfsc	12,1	;volsfr
+  1721  02EA  2AE7               	goto	l328
+  1722  02EB  1283               	bcf	3,5	;RP0=0, select bank0
+  1723  02EC  1303               	bcf	3,6	;RP1=0, select bank0
+  1724  02ED  0847               	movf	memcpyee@ptr,w
+  1725  02EE  0084               	movwf	4
+  1726  02EF  1383               	bcf	3,7	;select IRP bank0
+  1727  02F0  0800               	movf	0,w
+  1728  02F1  1283               	bcf	3,5	;RP0=0, select bank2
+  1729  02F2  1703               	bsf	3,6	;RP1=1, select bank2
+  1730  02F3  008C               	movwf	12	;volatile
+  1731  02F4  3001               	movlw	1
+  1732  02F5  1283               	bcf	3,5	;RP0=0, select bank0
+  1733  02F6  1303               	bcf	3,6	;RP1=0, select bank0
+  1734  02F7  00C6               	movwf	??_memcpyee
+  1735  02F8  0846               	movf	??_memcpyee,w
+  1736  02F9  07C7               	addwf	memcpyee@ptr,f
+  1737  02FA  3001               	movlw	1
+  1738  02FB  00C6               	movwf	??_memcpyee
+  1739  02FC  0846               	movf	??_memcpyee,w
+  1740  02FD  1283               	bcf	3,5	;RP0=0, select bank2
+  1741  02FE  1703               	bsf	3,6	;RP1=1, select bank2
+  1742  02FF  078D               	addwf	13,f	;volatile
+  1743  0300  1283               	bcf	3,5	;RP0=0, select bank0
+  1744  0301  1303               	bcf	3,6	;RP1=0, select bank0
+  1745  0302  1003               	bcf	3,0	;volatile
+  1746  0303  1B8B               	btfsc	11,7	;volatile
+  1747  0304  1403               	bsf	3,0	;volatile
+  1748  0305  138B               	bcf	11,7	;volatile
+  1749  0306  1683               	bsf	3,5	;RP0=1, select bank3
+  1750  0307  1703               	bsf	3,6	;RP1=1, select bank3
+  1751  0308  150C               	bsf	12,2	;volsfr
+  1752  0309  3055               	movlw	85
+  1753  030A  008D               	movwf	13	;volsfr
+  1754  030B  30AA               	movlw	170
+  1755  030C  008D               	movwf	13	;volsfr
+  1756  030D  148C               	bsf	12,1	;volsfr
+  1757  030E  110C               	bcf	12,2	;volsfr
+  1758  030F  1283               	bcf	3,5	;RP0=0, select bank0
+  1759  0310  1303               	bcf	3,6	;RP1=0, select bank0
+  1760  0311  1C03               	btfss	3,0	;volatile
+  1761  0312  2AE0               	goto	l1396
+  1762  0313  178B               	bsf	11,7	;volatile
+  1763  0314  2AE0               	goto	l1396
+  1764  0315                     __end_of_memcpyee:	
+  1765                           
+  1766                           	psect	text6
+  1767  01BE                     __ptext6:	
+  1768 ;; *************** function _init_16f690 *****************
+  1769 ;; Defined at:
+  1770 ;;		line 31 in file "init_16f690.c"
+  1771 ;; Parameters:    Size  Location     Type
+  1772 ;;		None
+  1773 ;; Auto vars:     Size  Location     Type
+  1774 ;;		None
+  1775 ;; Return value:  Size  Location     Type
+  1776 ;;                  1    wreg      void 
+  1777 ;; Registers used:
+  1778 ;;		wreg, status,2
+  1779 ;; Tracked objects:
+  1780 ;;		On entry : 0/0
+  1781 ;;		On exit  : 0/0
+  1782 ;;		Unchanged: 0/0
+  1783 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  1784 ;;      Params:         0       0       0       0
+  1785 ;;      Locals:         0       0       0       0
+  1786 ;;      Temps:          0       0       0       0
+  1787 ;;      Totals:         0       0       0       0
+  1788 ;;Total ram usage:        0 bytes
+  1789 ;; Hardware stack levels used:    1
+  1790 ;; Hardware stack levels required when called:    3
+  1791 ;; This function calls:
+  1792 ;;		Nothing
+  1793 ;; This function is called by:
+  1794 ;;		_main
+  1795 ;; This function uses a non-reentrant model
+  1796 ;;
+  1797                           
+  1798                           
+  1799                           ;psect for function _init_16f690
+  1800  01BE                     _init_16f690:	
+  1801                           
+  1802                           ;init_16f690.c: 34: OSCCON = 0x68;
+  1803                           
+  1804                           ;incstack = 0
+  1805                           ; Regs used in _init_16f690: [wreg+status,2]
+  1806  01BE  3068               	movlw	104
+  1807  01BF  1683               	bsf	3,5	;RP0=1, select bank1
+  1808  01C0  1303               	bcf	3,6	;RP1=0, select bank1
+  1809  01C1  008F               	movwf	15	;volatile
+  1810                           
+  1811                           ;init_16f690.c: 36: WDTCON = 0x15;
+  1812  01C2  3015               	movlw	21
+  1813  01C3  0097               	movwf	23	;volatile
+  1814                           
+  1815                           ;init_16f690.c: 37: SWDTEN = 0;
+  1816  01C4  1017               	bcf	23,0	;volatile
+  1817                           
+  1818                           ;init_16f690.c: 39: OPTION_REG = 0x07;
+  1819  01C5  3007               	movlw	7
+  1820  01C6  0081               	movwf	1	;volatile
+  1821                           
+  1822                           ;init_16f690.c: 46: INTCON = 0x00;
+  1823  01C7  018B               	clrf	11	;volatile
+  1824                           
+  1825                           ;init_16f690.c: 52: PIE1 = 0x00;
+  1826  01C8  018C               	clrf	12	;volatile
+  1827                           
+  1828                           ;init_16f690.c: 58: PIE2 = 0x00;
+  1829  01C9  018D               	clrf	13	;volatile
+  1830                           
+  1831                           ;init_16f690.c: 63: PIR1 = 0x00;
+  1832  01CA  1283               	bcf	3,5	;RP0=0, select bank0
+  1833  01CB  1303               	bcf	3,6	;RP1=0, select bank0
+  1834  01CC  018C               	clrf	12	;volatile
+  1835                           
+  1836                           ;init_16f690.c: 64: PIR2 = 0x00;
+  1837  01CD  018D               	clrf	13	;volatile
+  1838                           
+  1839                           ;init_16f690.c: 66: PCON = 0x13;
+  1840  01CE  3013               	movlw	19
+  1841  01CF  1683               	bsf	3,5	;RP0=1, select bank1
+  1842  01D0  1303               	bcf	3,6	;RP1=0, select bank1
+  1843  01D1  008E               	movwf	14	;volatile
+  1844                           
+  1845                           ;init_16f690.c: 69: ANSEL = 0x00;
+  1846  01D2  1283               	bcf	3,5	;RP0=0, select bank2
+  1847  01D3  1703               	bsf	3,6	;RP1=1, select bank2
+  1848  01D4  019E               	clrf	30	;volatile
+  1849                           
+  1850                           ;init_16f690.c: 70: ANSELH = 0x00;
+  1851  01D5  019F               	clrf	31	;volatile
+  1852                           
+  1853                           ;init_16f690.c: 72: CM1CON0 = 0x00;
+  1854  01D6  0199               	clrf	25	;volatile
+  1855                           
+  1856                           ;init_16f690.c: 73: CM2CON0 = 0x00;
+  1857  01D7  019A               	clrf	26	;volatile
+  1858                           
+  1859                           ;init_16f690.c: 75: PORTA = 0x3F;
+  1860  01D8  303F               	movlw	63
+  1861  01D9  1283               	bcf	3,5	;RP0=0, select bank0
+  1862  01DA  1303               	bcf	3,6	;RP1=0, select bank0
+  1863  01DB  0085               	movwf	5	;volatile
+  1864                           
+  1865                           ;init_16f690.c: 76: TRISA = 0x3F;
+  1866  01DC  303F               	movlw	63
+  1867  01DD  1683               	bsf	3,5	;RP0=1, select bank1
+  1868  01DE  1303               	bcf	3,6	;RP1=0, select bank1
+  1869  01DF  0085               	movwf	5	;volatile
+  1870                           
+  1871                           ;init_16f690.c: 77: WPUA = 0x3F;
+  1872  01E0  303F               	movlw	63
+  1873  01E1  0095               	movwf	21	;volatile
+  1874                           
+  1875                           ;init_16f690.c: 78: IOCA = 0x3F;
+  1876  01E2  303F               	movlw	63
+  1877  01E3  0096               	movwf	22	;volatile
+  1878                           
+  1879                           ;init_16f690.c: 80: PORTB = 0x30;
+  1880  01E4  3030               	movlw	48
+  1881  01E5  1283               	bcf	3,5	;RP0=0, select bank0
+  1882  01E6  1303               	bcf	3,6	;RP1=0, select bank0
+  1883  01E7  0086               	movwf	6	;volatile
+  1884                           
+  1885                           ;init_16f690.c: 81: TRISB = 0x20;
+  1886  01E8  3020               	movlw	32
+  1887  01E9  1683               	bsf	3,5	;RP0=1, select bank1
+  1888  01EA  1303               	bcf	3,6	;RP1=0, select bank1
+  1889  01EB  0086               	movwf	6	;volatile
+  1890                           
+  1891                           ;init_16f690.c: 82: WPUB = 0x20;
+  1892  01EC  3020               	movlw	32
+  1893  01ED  1283               	bcf	3,5	;RP0=0, select bank2
+  1894  01EE  1703               	bsf	3,6	;RP1=1, select bank2
+  1895  01EF  0095               	movwf	21	;volatile
+  1896                           
+  1897                           ;init_16f690.c: 83: IOCB = 0x00;
+  1898  01F0  0196               	clrf	22	;volatile
+  1899                           
+  1900                           ;init_16f690.c: 85: TRISC = 0x00;
+  1901  01F1  1683               	bsf	3,5	;RP0=1, select bank1
+  1902  01F2  1303               	bcf	3,6	;RP1=0, select bank1
+  1903  01F3  0187               	clrf	7	;volatile
+  1904                           
+  1905                           ;init_16f690.c: 86: PORTC = 0x00;
+  1906  01F4  1283               	bcf	3,5	;RP0=0, select bank0
+  1907  01F5  1303               	bcf	3,6	;RP1=0, select bank0
+  1908  01F6  0187               	clrf	7	;volatile
+  1909                           
+  1910                           ;init_16f690.c: 88: T1CON = 0x01;
+  1911  01F7  3001               	movlw	1
+  1912  01F8  0090               	movwf	16	;volatile
+  1913                           
+  1914                           ;init_16f690.c: 94: PR2 = 0xFA;
+  1915  01F9  30FA               	movlw	250
+  1916  01FA  1683               	bsf	3,5	;RP0=1, select bank1
+  1917  01FB  1303               	bcf	3,6	;RP1=0, select bank1
+  1918  01FC  0092               	movwf	18	;volatile
+  1919                           
+  1920                           ;init_16f690.c: 95: T2CON = 0x49;
+  1921  01FD  3049               	movlw	73
+  1922  01FE  1283               	bcf	3,5	;RP0=0, select bank0
+  1923  01FF  1303               	bcf	3,6	;RP1=0, select bank0
+  1924  0200  0092               	movwf	18	;volatile
+  1925                           
+  1926                           ;init_16f690.c: 100: SYNC = 0;
+  1927  0201  1683               	bsf	3,5	;RP0=1, select bank1
+  1928  0202  1303               	bcf	3,6	;RP1=0, select bank1
+  1929  0203  1218               	bcf	24,4	;volatile
+  1930                           
+  1931                           ;init_16f690.c: 102: BRGH = 1;
+  1932  0204  1518               	bsf	24,2	;volatile
+  1933                           
+  1934                           ;init_16f690.c: 103: BRG16 = 1;
+  1935  0205  159B               	bsf	27,3	;volatile
+  1936                           
+  1937                           ;init_16f690.c: 104: SPBRGH = 0x00;
+  1938  0206  019A               	clrf	26	;volatile
+  1939                           
+  1940                           ;init_16f690.c: 105: SPBRG = 0x67;
+  1941  0207  3067               	movlw	103
+  1942  0208  0099               	movwf	25	;volatile
+  1943                           
+  1944                           ;init_16f690.c: 107: SPEN = 1;
+  1945  0209  1283               	bcf	3,5	;RP0=0, select bank0
+  1946  020A  1303               	bcf	3,6	;RP1=0, select bank0
+  1947  020B  1798               	bsf	24,7	;volatile
+  1948                           
+  1949                           ;init_16f690.c: 108: TXEN = 1;
+  1950  020C  1683               	bsf	3,5	;RP0=1, select bank1
+  1951  020D  1303               	bcf	3,6	;RP1=0, select bank1
+  1952  020E  1698               	bsf	24,5	;volatile
+  1953                           
+  1954                           ;init_16f690.c: 109: CREN = 1;
+  1955  020F  1283               	bcf	3,5	;RP0=0, select bank0
+  1956  0210  1303               	bcf	3,6	;RP1=0, select bank0
+  1957  0211  1618               	bsf	24,4	;volatile
+  1958                           
+  1959                           ;init_16f690.c: 111: RABIE =1;
+  1960  0212  158B               	bsf	11,3	;volatile
+  1961                           
+  1962                           ;init_16f690.c: 112: PEIE =1;
+  1963  0213  170B               	bsf	11,6	;volatile
+  1964                           
+  1965                           ;init_16f690.c: 113: T0IE =0;
+  1966  0214  128B               	bcf	11,5	;volatile
+  1967                           
+  1968                           ;init_16f690.c: 114: TMR1IE =1;
+  1969  0215  1683               	bsf	3,5	;RP0=1, select bank1
+  1970  0216  1303               	bcf	3,6	;RP1=0, select bank1
+  1971  0217  140C               	bsf	12,0	;volatile
+  1972                           
+  1973                           ;init_16f690.c: 115: TMR2IE =0;
+  1974  0218  108C               	bcf	12,1	;volatile
+  1975                           
+  1976                           ;init_16f690.c: 116: RCIE =1;
+  1977  0219  168C               	bsf	12,5	;volatile
+  1978  021A  0008               	return
+  1979  021B                     __end_of_init_16f690:	
+  1980                           
+  1981                           	psect	text7
+  1982  039F                     __ptext7:	
+  1983 ;; *************** function _eecpymem *****************
+  1984 ;; Defined at:
+  1985 ;;		line 6 in file "E:\Program Files (x86)\Microchip\xc8\v1.38\sources\pic\eeprom.c"
+  1986 ;; Parameters:    Size  Location     Type
+  1987 ;;  to              2    0[BANK0 ] PTR volatile unsigned ch
+  1988 ;;		 -> __eetofl@data(3), __eetoft@data(3), __eetol@data(4), __eetom@data(3), 
+  1989 ;;		 -> __eetoi@data(2), __eetoc@data(1), TX_DATA(60), IO_RAM(27), 
+  1990 ;;  from            2    2[BANK0 ] PTR eeprom unsigned char
+  1991 ;;		 -> RAM(512), RAM(512), 
+  1992 ;;  size            1    4[BANK0 ] unsigned char 
+  1993 ;; Auto vars:     Size  Location     Type
+  1994 ;;  cp              2    6[BANK0 ] PTR volatile unsigned ch
+  1995 ;;		 -> __eetofl@data(3), __eetoft@data(3), __eetol@data(4), __eetom@data(3), 
+  1996 ;;		 -> __eetoi@data(2), __eetoc@data(1), TX_DATA(60), IO_RAM(27), 
+  1997 ;; Return value:  Size  Location     Type
+  1998 ;;                  1    wreg      void 
+  1999 ;; Registers used:
+  2000 ;;		wreg, fsr0l, fsr0h, status,2, status,0
+  2001 ;; Tracked objects:
+  2002 ;;		On entry : 0/0
+  2003 ;;		On exit  : 0/0
+  2004 ;;		Unchanged: 0/0
+  2005 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  2006 ;;      Params:         0       5       0       0
+  2007 ;;      Locals:         0       2       0       0
+  2008 ;;      Temps:          0       1       0       0
+  2009 ;;      Totals:         0       8       0       0
+  2010 ;;Total ram usage:        8 bytes
+  2011 ;; Hardware stack levels used:    1
+  2012 ;; Hardware stack levels required when called:    3
+  2013 ;; This function calls:
+  2014 ;;		Nothing
+  2015 ;; This function is called by:
+  2016 ;;		_main
+  2017 ;; This function uses a non-reentrant model
+  2018 ;;
+  2019                           
+  2020                           
+  2021                           ;psect for function _eecpymem
+  2022  039F                     _eecpymem:	
+  2023                           
+  2024                           ;incstack = 0
+  2025                           ; Regs used in _eecpymem: [wreg-fsr0h+status,2+status,0]
+  2026  039F  1283               	bcf	3,5	;RP0=0, select bank0
+  2027  03A0  1303               	bcf	3,6	;RP1=0, select bank0
+  2028  03A1  0842               	movf	eecpymem@to,w
+  2029  03A2  00C8               	movwf	eecpymem@cp
+  2030  03A3  0843               	movf	eecpymem@to+1,w
+  2031  03A4  00C9               	movwf	eecpymem@cp+1
+  2032  03A5                     l311:	
+  2033  03A5  1683               	bsf	3,5	;RP0=1, select bank3
+  2034  03A6  1703               	bsf	3,6	;RP1=1, select bank3
+  2035  03A7  188C               	btfsc	12,1	;volsfr
+  2036  03A8  2BA5               	goto	l311
+  2037  03A9  1283               	bcf	3,5	;RP0=0, select bank0
+  2038  03AA  1303               	bcf	3,6	;RP1=0, select bank0
+  2039  03AB  0844               	movf	eecpymem@from,w
+  2040  03AC  1283               	bcf	3,5	;RP0=0, select bank2
+  2041  03AD  1703               	bsf	3,6	;RP1=1, select bank2
+  2042  03AE  008D               	movwf	13	;volatile
+  2043  03AF                     l1328:	
+  2044  03AF  3001               	movlw	1
+  2045  03B0  1283               	bcf	3,5	;RP0=0, select bank0
+  2046  03B1  1303               	bcf	3,6	;RP1=0, select bank0
+  2047  03B2  02C6               	subwf	eecpymem@size,f
+  2048  03B3  0A46               	incf	eecpymem@size,w
+  2049  03B4  1903               	btfsc	3,2
+  2050  03B5  0008               	return
+  2051  03B6                     l316:	
+  2052  03B6  1683               	bsf	3,5	;RP0=1, select bank3
+  2053  03B7  1703               	bsf	3,6	;RP1=1, select bank3
+  2054  03B8  188C               	btfsc	12,1	;volsfr
+  2055  03B9  2BB6               	goto	l316
+  2056  03BA  307F               	movlw	127
+  2057  03BB  1283               	bcf	3,5	;RP0=0, select bank0
+  2058  03BC  1303               	bcf	3,6	;RP1=0, select bank0
+  2059  03BD  00C7               	movwf	??_eecpymem
+  2060  03BE  0847               	movf	??_eecpymem,w
+  2061  03BF  1683               	bsf	3,5	;RP0=1, select bank3
+  2062  03C0  1703               	bsf	3,6	;RP1=1, select bank3
+  2063  03C1  058C               	andwf	12,f	;volsfr
+  2064  03C2  140C               	bsf	12,0	;volsfr
+  2065  03C3  1283               	bcf	3,5	;RP0=0, select bank0
+  2066  03C4  1303               	bcf	3,6	;RP1=0, select bank0
+  2067  03C5  0848               	movf	eecpymem@cp,w
+  2068  03C6  0084               	movwf	4
+  2069  03C7  1383               	bcf	3,7
+  2070  03C8  1849               	btfsc	eecpymem@cp+1,0
+  2071  03C9  1783               	bsf	3,7
+  2072  03CA  1283               	bcf	3,5	;RP0=0, select bank2
+  2073  03CB  1703               	bsf	3,6	;RP1=1, select bank2
+  2074  03CC  080C               	movf	12,w	;volatile
+  2075  03CD  0080               	movwf	0
+  2076  03CE  3001               	movlw	1
+  2077  03CF  1283               	bcf	3,5	;RP0=0, select bank0
+  2078  03D0  1303               	bcf	3,6	;RP1=0, select bank0
+  2079  03D1  07C8               	addwf	eecpymem@cp,f
+  2080  03D2  1803               	skipnc
+  2081  03D3  0AC9               	incf	eecpymem@cp+1,f
+  2082  03D4  3001               	movlw	1
+  2083  03D5  00C7               	movwf	??_eecpymem
+  2084  03D6  0847               	movf	??_eecpymem,w
+  2085  03D7  1283               	bcf	3,5	;RP0=0, select bank2
+  2086  03D8  1703               	bsf	3,6	;RP1=1, select bank2
+  2087  03D9  078D               	addwf	13,f	;volatile
+  2088  03DA  2BAF               	goto	l1328
+  2089  03DB                     __end_of_eecpymem:	
+  2090                           
+  2091                           	psect	text8
+  2092  021B                     __ptext8:	
+  2093 ;; *************** function ___awdiv *****************
+  2094 ;; Defined at:
+  2095 ;;		line 6 in file "E:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\awdiv.c"
+  2096 ;; Parameters:    Size  Location     Type
+  2097 ;;  divisor         2    0[BANK0 ] int 
+  2098 ;;  dividend        2    2[BANK0 ] int 
+  2099 ;; Auto vars:     Size  Location     Type
+  2100 ;;  quotient        2    7[BANK0 ] int 
+  2101 ;;  sign            1    6[BANK0 ] unsigned char 
+  2102 ;;  counter         1    5[BANK0 ] unsigned char 
+  2103 ;; Return value:  Size  Location     Type
+  2104 ;;                  2    0[BANK0 ] int 
+  2105 ;; Registers used:
+  2106 ;;		wreg, status,2, status,0
+  2107 ;; Tracked objects:
+  2108 ;;		On entry : 0/0
+  2109 ;;		On exit  : 0/0
+  2110 ;;		Unchanged: 0/0
+  2111 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  2112 ;;      Params:         0       4       0       0
+  2113 ;;      Locals:         0       4       0       0
+  2114 ;;      Temps:          0       1       0       0
+  2115 ;;      Totals:         0       9       0       0
+  2116 ;;Total ram usage:        9 bytes
+  2117 ;; Hardware stack levels used:    1
+  2118 ;; Hardware stack levels required when called:    3
+  2119 ;; This function calls:
+  2120 ;;		Nothing
+  2121 ;; This function is called by:
+  2122 ;;		_main
+  2123 ;; This function uses a non-reentrant model
+  2124 ;;
+  2125                           
+  2126                           
+  2127                           ;psect for function ___awdiv
+  2128  021B                     ___awdiv:	
+  2129                           
+  2130                           ;incstack = 0
+  2131                           ; Regs used in ___awdiv: [wreg+status,2+status,0]
+  2132  021B  1283               	bcf	3,5	;RP0=0, select bank0
+  2133  021C  1303               	bcf	3,6	;RP1=0, select bank0
+  2134  021D  01C8               	clrf	___awdiv@sign
+  2135  021E  1FC3               	btfss	___awdiv@divisor+1,7
+  2136  021F  2A27               	goto	l1432
+  2137  0220  09C2               	comf	___awdiv@divisor,f
+  2138  0221  09C3               	comf	___awdiv@divisor+1,f
+  2139  0222  0AC2               	incf	___awdiv@divisor,f
+  2140  0223  1903               	skipnz
+  2141  0224  0AC3               	incf	___awdiv@divisor+1,f
+  2142  0225  01C8               	clrf	___awdiv@sign
+  2143  0226  0AC8               	incf	___awdiv@sign,f
+  2144  0227                     l1432:	
+  2145  0227  1FC5               	btfss	___awdiv@dividend+1,7
+  2146  0228  2A32               	goto	l1438
+  2147  0229  09C4               	comf	___awdiv@dividend,f
+  2148  022A  09C5               	comf	___awdiv@dividend+1,f
+  2149  022B  0AC4               	incf	___awdiv@dividend,f
+  2150  022C  1903               	skipnz
+  2151  022D  0AC5               	incf	___awdiv@dividend+1,f
+  2152  022E  3001               	movlw	1
+  2153  022F  00C6               	movwf	??___awdiv
+  2154  0230  0846               	movf	??___awdiv,w
+  2155  0231  06C8               	xorwf	___awdiv@sign,f
+  2156  0232                     l1438:	
+  2157  0232  01C9               	clrf	___awdiv@quotient
+  2158  0233  01CA               	clrf	___awdiv@quotient+1
+  2159  0234  0842               	movf	___awdiv@divisor,w
+  2160  0235  0443               	iorwf	___awdiv@divisor+1,w
+  2161  0236  1903               	btfsc	3,2
+  2162  0237  2A69               	goto	l1460
+  2163  0238  01C7               	clrf	___awdiv@counter
+  2164  0239  0AC7               	incf	___awdiv@counter,f
+  2165  023A                     l1448:	
+  2166  023A  1BC3               	btfsc	___awdiv@divisor+1,7
+  2167  023B  2A48               	goto	l1450
+  2168  023C  3001               	movlw	1
+  2169  023D                     u825:	
+  2170  023D  1003               	clrc
+  2171  023E  0DC2               	rlf	___awdiv@divisor,f
+  2172  023F  0DC3               	rlf	___awdiv@divisor+1,f
+  2173  0240  3EFF               	addlw	-1
+  2174  0241  1D03               	skipz
+  2175  0242  2A3D               	goto	u825
+  2176  0243  3001               	movlw	1
+  2177  0244  00C6               	movwf	??___awdiv
+  2178  0245  0846               	movf	??___awdiv,w
+  2179  0246  07C7               	addwf	___awdiv@counter,f
+  2180  0247  2A3A               	goto	l1448
+  2181  0248                     l1450:	
+  2182  0248  3001               	movlw	1
+  2183  0249                     u845:	
+  2184  0249  1003               	clrc
+  2185  024A  0DC9               	rlf	___awdiv@quotient,f
+  2186  024B  0DCA               	rlf	___awdiv@quotient+1,f
+  2187  024C  3EFF               	addlw	-1
+  2188  024D  1D03               	skipz
+  2189  024E  2A49               	goto	u845
+  2190  024F  0843               	movf	___awdiv@divisor+1,w
+  2191  0250  0245               	subwf	___awdiv@dividend+1,w
+  2192  0251  1D03               	skipz
+  2193  0252  2A55               	goto	u855
+  2194  0253  0842               	movf	___awdiv@divisor,w
+  2195  0254  0244               	subwf	___awdiv@dividend,w
+  2196  0255                     u855:	
+  2197  0255  1C03               	skipc
+  2198  0256  2A5E               	goto	l1456
+  2199  0257  0842               	movf	___awdiv@divisor,w
+  2200  0258  02C4               	subwf	___awdiv@dividend,f
+  2201  0259  0843               	movf	___awdiv@divisor+1,w
+  2202  025A  1C03               	skipc
+  2203  025B  03C5               	decf	___awdiv@dividend+1,f
+  2204  025C  02C5               	subwf	___awdiv@dividend+1,f
+  2205  025D  1449               	bsf	___awdiv@quotient,0
+  2206  025E                     l1456:	
+  2207  025E  3001               	movlw	1
+  2208  025F                     u865:	
+  2209  025F  1003               	clrc
+  2210  0260  0CC3               	rrf	___awdiv@divisor+1,f
+  2211  0261  0CC2               	rrf	___awdiv@divisor,f
+  2212  0262  3EFF               	addlw	-1
+  2213  0263  1D03               	skipz
+  2214  0264  2A5F               	goto	u865
+  2215  0265  3001               	movlw	1
+  2216  0266  02C7               	subwf	___awdiv@counter,f
+  2217  0267  1D03               	btfss	3,2
+  2218  0268  2A48               	goto	l1450
+  2219  0269                     l1460:	
+  2220  0269  0848               	movf	___awdiv@sign,w
+  2221  026A  1903               	btfsc	3,2
+  2222  026B  2A71               	goto	l1464
+  2223  026C  09C9               	comf	___awdiv@quotient,f
+  2224  026D  09CA               	comf	___awdiv@quotient+1,f
+  2225  026E  0AC9               	incf	___awdiv@quotient,f
+  2226  026F  1903               	skipnz
+  2227  0270  0ACA               	incf	___awdiv@quotient+1,f
+  2228  0271                     l1464:	
+  2229  0271  084A               	movf	___awdiv@quotient+1,w
+  2230  0272  00C3               	movwf	?___awdiv+1
+  2231  0273  0849               	movf	___awdiv@quotient,w
+  2232  0274  00C2               	movwf	?___awdiv
+  2233  0275  0008               	return
+  2234  0276                     __end_of___awdiv:	
+  2235                           
+  2236                           	psect	text9
+  2237  0276                     __ptext9:	
+  2238 ;; *************** function _ISR *****************
+  2239 ;; Defined at:
+  2240 ;;		line 163 in file "main.c"
+  2241 ;; Parameters:    Size  Location     Type
+  2242 ;;		None
+  2243 ;; Auto vars:     Size  Location     Type
+  2244 ;;		None
+  2245 ;; Return value:  Size  Location     Type
+  2246 ;;                  1    wreg      void 
+  2247 ;; Registers used:
+  2248 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+  2249 ;; Tracked objects:
+  2250 ;;		On entry : 0/0
+  2251 ;;		On exit  : 0/0
+  2252 ;;		Unchanged: 0/0
+  2253 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  2254 ;;      Params:         0       0       0       0
+  2255 ;;      Locals:         0       0       0       0
+  2256 ;;      Temps:          5       0       0       0
+  2257 ;;      Totals:         5       0       0       0
+  2258 ;;Total ram usage:        5 bytes
+  2259 ;; Hardware stack levels used:    1
+  2260 ;; Hardware stack levels required when called:    2
+  2261 ;; This function calls:
+  2262 ;;		_modbus_recv
+  2263 ;;		_set_timer1
+  2264 ;; This function is called by:
+  2265 ;;		Interrupt level 1
+  2266 ;; This function uses a non-reentrant model
+  2267 ;;
+  2268                           
+  2269                           
+  2270                           ;psect for function _ISR
+  2271  0276                     _ISR:	
+  2272                           
+  2273                           ;main.c: 166: if( TMR1IE && TMR1IF )
+  2274  0276  1683               	bsf	3,5	;RP0=1, select bank1
+  2275  0277  1303               	bcf	3,6	;RP1=0, select bank1
+  2276  0278  1C0C               	btfss	12,0	;volatile
+  2277  0279  2A91               	goto	i1l1618
+  2278  027A  1283               	bcf	3,5	;RP0=0, select bank0
+  2279  027B  1303               	bcf	3,6	;RP1=0, select bank0
+  2280  027C  1C0C               	btfss	12,0	;volatile
+  2281  027D  2A91               	goto	i1l1618
+  2282                           
+  2283                           ;main.c: 167: {
+  2284                           ;main.c: 168: if(FLAG_T1 ==1)
+  2285  027E  037A               	decf	_FLAG_T1,w
+  2286  027F  1D03               	btfss	3,2
+  2287  0280  2A85               	goto	i1l1608
+  2288                           
+  2289                           ;main.c: 169: {
+  2290                           ;main.c: 170: FLAG_15 =0; FLAG_35 =1;
+  2291  0281  01A3               	clrf	_FLAG_15
+  2292  0282  01F9               	clrf	_FLAG_35
+  2293  0283  0AF9               	incf	_FLAG_35,f
+  2294                           
+  2295                           ;main.c: 171: }
+  2296  0284  2A8E               	goto	i1l1616
+  2297  0285                     i1l1608:	
+  2298                           
+  2299                           ;main.c: 172: else
+  2300                           ;main.c: 173: {
+  2301                           ;main.c: 174: FLAG_35 =0; FLAG_15 =1;
+  2302  0285  01F9               	clrf	_FLAG_35
+  2303  0286  01A3               	clrf	_FLAG_15
+  2304  0287  0AA3               	incf	_FLAG_15,f
+  2305                           
+  2306                           ;main.c: 175: FLAG_RCOK =1;
+  2307  0288  01A4               	clrf	_FLAG_RCOK
+  2308  0289  0AA4               	incf	_FLAG_RCOK,f
+  2309                           
+  2310                           ;main.c: 176: set_timer1(35);
+  2311  028A  3023               	movlw	35
+  2312  028B  118A  2438  118A   	fcall	_set_timer1
+  2313  028E                     i1l1616:	
+  2314                           
+  2315                           ;main.c: 177: }
+  2316                           ;main.c: 178: TMR1IF =0;
+  2317  028E  1283               	bcf	3,5	;RP0=0, select bank0
+  2318  028F  1303               	bcf	3,6	;RP1=0, select bank0
+  2319  0290  100C               	bcf	12,0	;volatile
+  2320  0291                     i1l1618:	
+  2321                           
+  2322                           ;main.c: 179: }
+  2323                           ;main.c: 182: if (TMR2IE && TMR2IF)
+  2324  0291  1683               	bsf	3,5	;RP0=1, select bank1
+  2325  0292  1303               	bcf	3,6	;RP1=0, select bank1
+  2326  0293  1C8C               	btfss	12,1	;volatile
+  2327  0294  2A9E               	goto	i1l1626
+  2328  0295  1283               	bcf	3,5	;RP0=0, select bank0
+  2329  0296  1303               	bcf	3,6	;RP1=0, select bank0
+  2330  0297  1C8C               	btfss	12,1	;volatile
+  2331  0298  2A9E               	goto	i1l1626
+  2332                           
+  2333                           ;main.c: 183: {
+  2334                           ;main.c: 184: tmr2DelayCnt++;
+  2335  0299  3001               	movlw	1
+  2336  029A  00F4               	movwf	??_ISR
+  2337  029B  0874               	movf	??_ISR,w
+  2338  029C  07A6               	addwf	_tmr2DelayCnt,f
+  2339                           
+  2340                           ;main.c: 185: TMR2IF = 0;
+  2341  029D  108C               	bcf	12,1	;volatile
+  2342  029E                     i1l1626:	
+  2343                           
+  2344                           ;main.c: 186: }
+  2345                           ;main.c: 189: if( RCIF && RCIE )
+  2346  029E  1283               	bcf	3,5	;RP0=0, select bank0
+  2347  029F  1E8C               	btfss	12,5	;volatile
+  2348  02A0  2AAC               	goto	i1l1634
+  2349  02A1  1683               	bsf	3,5	;RP0=1, select bank1
+  2350  02A2  1303               	bcf	3,6	;RP1=0, select bank1
+  2351  02A3  1E8C               	btfss	12,5	;volatile
+  2352  02A4  2AAC               	goto	i1l1634
+  2353                           
+  2354                           ;main.c: 190: {
+  2355                           ;main.c: 191: RB4 = 0;
+  2356  02A5  1283               	bcf	3,5	;RP0=0, select bank0
+  2357  02A6  1303               	bcf	3,6	;RP1=0, select bank0
+  2358  02A7  1206               	bcf	6,4	;volatile
+  2359                           
+  2360                           ;main.c: 192: modbus_recv( RCREG );
+  2361  02A8  081A               	movf	26,w	;volatile
+  2362  02A9  118A  23DB  118A   	fcall	_modbus_recv
+  2363  02AC                     i1l1634:	
+  2364                           
+  2365                           ;main.c: 193: }
+  2366                           ;main.c: 196: if( RABIE && RABIF )
+  2367  02AC  198B               	btfsc	11,3	;volatile
+  2368  02AD  1C0B               	btfss	11,0	;volatile
+  2369  02AE  2ABA               	goto	i1l124
+  2370                           
+  2371                           ;main.c: 197: {
+  2372                           ;main.c: 198: tmr2DelayCnt = 0;
+  2373  02AF  1283               	bcf	3,5	;RP0=0, select bank0
+  2374  02B0  1303               	bcf	3,6	;RP1=0, select bank0
+  2375  02B1  01A6               	clrf	_tmr2DelayCnt
+  2376                           
+  2377                           ;main.c: 199: IO_RAM[26] = ~PORTA | 0xF0;
+  2378  02B2  0905               	comf	5,w	;volatile
+  2379  02B3  38F0               	iorlw	240
+  2380  02B4  00F4               	movwf	??_ISR
+  2381  02B5  0874               	movf	??_ISR,w
+  2382  02B6  00C1               	movwf	_IO_RAM+26
+  2383                           
+  2384                           ;main.c: 200: RABIF = 0;
+  2385  02B7  100B               	bcf	11,0	;volatile
+  2386                           
+  2387                           ;main.c: 201: FLAG_IOCHANGE = 1;
+  2388  02B8  01DB               	clrf	_FLAG_IOCHANGE
+  2389  02B9  0ADB               	incf	_FLAG_IOCHANGE,f
+  2390  02BA                     i1l124:	
+  2391  02BA  0878               	movf	??_ISR+4,w
+  2392  02BB  1283               	bcf	3,5	;RP0=0, select bank0
+  2393  02BC  1303               	bcf	3,6	;RP1=0, select bank0
+  2394  02BD  00FF               	movwf	127
+  2395  02BE  0877               	movf	??_ISR+3,w
+  2396  02BF  008A               	movwf	10
+  2397  02C0  0876               	movf	??_ISR+2,w
+  2398  02C1  0084               	movwf	4
+  2399  02C2  0E75               	swapf	(??_ISR+1)^(0+-128),w
+  2400  02C3  0083               	movwf	3
+  2401  02C4  0EFE               	swapf	126,f
+  2402  02C5  0E7E               	swapf	126,w
+  2403  02C6  0009               	retfie
+  2404  02C7                     __end_of_ISR:	
+  2405                           
+  2406                           	psect	intentry
+  2407  0004                     __pintentry:	
+  2408                           ;incstack = 0
+  2409                           ; Regs used in _ISR: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+  2410                           
+  2411  0004                     interrupt_function:	
+  2412  007E                     saved_w	set	btemp
+  2413  0004  00FE               	movwf	btemp
+  2414  0005  0E03               	swapf	3,w
+  2415  0006  00F5               	movwf	??_ISR+1
+  2416  0007  0804               	movf	4,w
+  2417  0008  00F6               	movwf	??_ISR+2
+  2418  0009  080A               	movf	10,w
+  2419  000A  00F7               	movwf	??_ISR+3
+  2420  000B  1283               	bcf	3,5	;RP0=0, select bank0
+  2421  000C  1303               	bcf	3,6	;RP1=0, select bank0
+  2422  000D  087F               	movf	btemp+1,w
+  2423  000E  00F8               	movwf	??_ISR+4
+  2424  000F  118A  2A76         	ljmp	_ISR
+  2425                           
+  2426                           	psect	text10
+  2427  03DB                     __ptext10:	
+  2428 ;; *************** function _modbus_recv *****************
+  2429 ;; Defined at:
+  2430 ;;		line 44 in file "init_modbus.c"
+  2431 ;; Parameters:    Size  Location     Type
+  2432 ;;  recv_data       1    wreg     unsigned char 
+  2433 ;; Auto vars:     Size  Location     Type
+  2434 ;;  recv_data       1    2[COMMON] unsigned char 
+  2435 ;;  rd              1    3[COMMON] unsigned char 
+  2436 ;; Return value:  Size  Location     Type
+  2437 ;;                  1    wreg      void 
+  2438 ;; Registers used:
+  2439 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+  2440 ;; Tracked objects:
+  2441 ;;		On entry : 0/0
+  2442 ;;		On exit  : 0/0
+  2443 ;;		Unchanged: 0/0
+  2444 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  2445 ;;      Params:         0       0       0       0
+  2446 ;;      Locals:         2       0       0       0
+  2447 ;;      Temps:          1       0       0       0
+  2448 ;;      Totals:         3       0       0       0
+  2449 ;;Total ram usage:        3 bytes
+  2450 ;; Hardware stack levels used:    1
+  2451 ;; Hardware stack levels required when called:    1
+  2452 ;; This function calls:
+  2453 ;;		_set_timer1
+  2454 ;; This function is called by:
+  2455 ;;		_ISR
+  2456 ;; This function uses a non-reentrant model
+  2457 ;;
+  2458                           
+  2459                           
+  2460                           ;psect for function _modbus_recv
+  2461  03DB                     _modbus_recv:	
+  2462                           
+  2463                           ;incstack = 0
+  2464                           ; Regs used in _modbus_recv: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+  2465                           ;modbus_recv@recv_data stored from wreg
+  2466  03DB  00F2               	movwf	modbus_recv@recv_data
+  2467                           
+  2468                           ;init_modbus.c: 46: unsigned char rd;
+  2469                           ;init_modbus.c: 47: rd = recv_data;
+  2470  03DC  0872               	movf	modbus_recv@recv_data,w
+  2471  03DD  00F1               	movwf	??_modbus_recv
+  2472  03DE  0871               	movf	??_modbus_recv,w
+  2473  03DF  00F3               	movwf	modbus_recv@rd
+  2474                           
+  2475                           ;init_modbus.c: 48: if(RC_N == 0)
+  2476  03E0  1283               	bcf	3,5	;RP0=0, select bank0
+  2477  03E1  1303               	bcf	3,6	;RP1=0, select bank0
+  2478  03E2  0825               	movf	_RC_N,w
+  2479  03E3  1D03               	btfss	3,2
+  2480  03E4  2BFA               	goto	i1l1414
+  2481                           
+  2482                           ;init_modbus.c: 49: {
+  2483                           ;init_modbus.c: 50: if( 1 == FLAG_35 && recv_data == ADD )
+  2484  03E5  0379               	decf	_FLAG_35,w
+  2485  03E6  1D03               	btfss	3,2
+  2486  03E7  2BF8               	goto	i1l1412
+  2487  03E8  0872               	movf	modbus_recv@recv_data,w
+  2488  03E9  0620               	xorwf	_ADD,w
+  2489  03EA  1D03               	skipz
+  2490  03EB  2BF8               	goto	i1l1412
+  2491                           
+  2492                           ;init_modbus.c: 51: {
+  2493                           ;init_modbus.c: 52: RC_DATA[0] = rd;
+  2494  03EC  0873               	movf	modbus_recv@rd,w
+  2495  03ED  00F1               	movwf	??_modbus_recv
+  2496  03EE  0871               	movf	??_modbus_recv,w
+  2497  03EF  1683               	bsf	3,5	;RP0=1, select bank1
+  2498  03F0  1303               	bcf	3,6	;RP1=0, select bank1
+  2499  03F1  00A0               	movwf	_RC_DATA^(0+128)
+  2500                           
+  2501                           ;init_modbus.c: 53: RC_N++;
+  2502  03F2  3001               	movlw	1
+  2503  03F3  00F1               	movwf	??_modbus_recv
+  2504  03F4  0871               	movf	??_modbus_recv,w
+  2505  03F5  1283               	bcf	3,5	;RP0=0, select bank0
+  2506  03F6  1303               	bcf	3,6	;RP1=0, select bank0
+  2507  03F7  2C0B               	goto	L4
+  2508  03F8                     i1l1412:	
+  2509                           ;init_modbus.c: 55: }
+  2510                           
+  2511                           ;init_modbus.c: 54: set_timer1(15);
+  2512                           
+  2513                           
+  2514                           ;init_modbus.c: 56: else
+  2515                           ;init_modbus.c: 57: {
+  2516                           ;init_modbus.c: 58: set_timer1(35);
+  2517  03F8  3023               	movlw	35
+  2518  03F9  2C0D               	goto	L5
+  2519  03FA                     i1l1414:	
+  2520                           ;init_modbus.c: 59: }
+  2521                           ;init_modbus.c: 60: }
+  2522                           
+  2523                           
+  2524                           ;init_modbus.c: 61: else if(RC_N < 60)
+  2525  03FA  303C               	movlw	60
+  2526  03FB  1283               	bcf	3,5	;RP0=0, select bank0
+  2527  03FC  1303               	bcf	3,6	;RP1=0, select bank0
+  2528  03FD  0225               	subwf	_RC_N,w
+  2529  03FE  1803               	skipnc
+  2530  03FF  2C0F               	goto	i1l1422
+  2531                           
+  2532                           ;init_modbus.c: 62: {
+  2533                           ;init_modbus.c: 63: RC_DATA[RC_N] = rd;
+  2534  0400  0873               	movf	modbus_recv@rd,w
+  2535  0401  00F1               	movwf	??_modbus_recv
+  2536  0402  0825               	movf	_RC_N,w
+  2537  0403  3EA0               	addlw	(low (_RC_DATA| 0))& (0+255)
+  2538  0404  0084               	movwf	4
+  2539  0405  0871               	movf	??_modbus_recv,w
+  2540  0406  1383               	bcf	3,7	;select IRP bank1
+  2541  0407  0080               	movwf	0
+  2542                           
+  2543                           ;init_modbus.c: 64: RC_N++;
+  2544  0408  3001               	movlw	1
+  2545  0409  00F1               	movwf	??_modbus_recv
+  2546  040A  0871               	movf	??_modbus_recv,w
+  2547  040B                     L4:	
+  2548  040B  07A5               	addwf	_RC_N,f
+  2549                           
+  2550                           ;init_modbus.c: 65: set_timer1(15);
+  2551  040C  300F               	movlw	15
+  2552  040D                     L5:	
+  2553  040D  118A  2438         	fcall	_set_timer1
+  2554  040F                     i1l1422:	
+  2555                           
+  2556                           ;init_modbus.c: 66: }
+  2557                           ;init_modbus.c: 68: RB4 = 1;
+  2558  040F  1283               	bcf	3,5	;RP0=0, select bank0
+  2559  0410  1303               	bcf	3,6	;RP1=0, select bank0
+  2560  0411  1606               	bsf	6,4	;volatile
+  2561  0412  0008               	return
+  2562  0413                     __end_of_modbus_recv:	
+  2563                           
+  2564                           	psect	text11
+  2565  0438                     __ptext11:	
+  2566 ;; *************** function _set_timer1 *****************
+  2567 ;; Defined at:
+  2568 ;;		line 159 in file "init_modbus.c"
+  2569 ;; Parameters:    Size  Location     Type
+  2570 ;;  mode            1    wreg     unsigned char 
+  2571 ;; Auto vars:     Size  Location     Type
+  2572 ;;  mode            1    0[COMMON] unsigned char 
+  2573 ;; Return value:  Size  Location     Type
+  2574 ;;                  1    wreg      void 
+  2575 ;; Registers used:
+  2576 ;;		wreg, fsr0l, fsr0h, status,2, status,0
+  2577 ;; Tracked objects:
+  2578 ;;		On entry : 0/0
+  2579 ;;		On exit  : 0/0
+  2580 ;;		Unchanged: 0/0
+  2581 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  2582 ;;      Params:         0       0       0       0
+  2583 ;;      Locals:         1       0       0       0
+  2584 ;;      Temps:          0       0       0       0
+  2585 ;;      Totals:         1       0       0       0
+  2586 ;;Total ram usage:        1 bytes
+  2587 ;; Hardware stack levels used:    1
+  2588 ;; This function calls:
+  2589 ;;		Nothing
+  2590 ;; This function is called by:
+  2591 ;;		_ISR
+  2592 ;;		_modbus_recv
+  2593 ;; This function uses a non-reentrant model
+  2594 ;;
+  2595                           
+  2596                           
+  2597                           ;psect for function _set_timer1
+  2598  0438                     _set_timer1:	
+  2599                           
+  2600                           ;incstack = 0
+  2601                           ; Regs used in _set_timer1: [wreg-fsr0h+status,2+status,0]
+  2602                           ;set_timer1@mode stored from wreg
+  2603  0438  00F0               	movwf	set_timer1@mode
+  2604                           
+  2605                           ;init_modbus.c: 161: switch(mode)
+  2606  0439  2C51               	goto	i1l1246
+  2607  043A                     i1l1226:	
+  2608                           ;init_modbus.c: 162: {
+  2609                           ;init_modbus.c: 163: case 15: FLAG_15 = FLAG_35 = 0;
+  2610                           
+  2611  043A  01F9               	clrf	_FLAG_35
+  2612  043B  1283               	bcf	3,5	;RP0=0, select bank0
+  2613  043C  1303               	bcf	3,6	;RP1=0, select bank0
+  2614  043D  01A3               	clrf	_FLAG_15
+  2615                           
+  2616                           ;init_modbus.c: 164: TMR1H = 0xF4;
+  2617  043E  30F4               	movlw	244
+  2618  043F  008F               	movwf	15	;volatile
+  2619                           
+  2620                           ;init_modbus.c: 165: TMR1L = 0xCF;
+  2621  0440  30CF               	movlw	207
+  2622  0441  008E               	movwf	14	;volatile
+  2623                           
+  2624                           ;init_modbus.c: 166: TMR1IF = 0;
+  2625  0442  100C               	bcf	12,0	;volatile
+  2626                           
+  2627                           ;init_modbus.c: 167: FLAG_T1 = 0;
+  2628  0443  01FA               	clrf	_FLAG_T1
+  2629                           
+  2630                           ;init_modbus.c: 168: break;
+  2631  0444  0008               	return
+  2632  0445                     i1l1234:	
+  2633                           ;init_modbus.c: 169: case 35: FLAG_15 = FLAG_35 = 0;
+  2634                           
+  2635  0445  01F9               	clrf	_FLAG_35
+  2636  0446  1283               	bcf	3,5	;RP0=0, select bank0
+  2637  0447  1303               	bcf	3,6	;RP1=0, select bank0
+  2638  0448  01A3               	clrf	_FLAG_15
+  2639                           
+  2640                           ;init_modbus.c: 170: TMR1H = 0xEB;
+  2641  0449  30EB               	movlw	235
+  2642  044A  008F               	movwf	15	;volatile
+  2643                           
+  2644                           ;init_modbus.c: 171: TMR1L = 0xDC;
+  2645  044B  30DC               	movlw	220
+  2646  044C  008E               	movwf	14	;volatile
+  2647                           
+  2648                           ;init_modbus.c: 172: TMR1IF = 0;
+  2649  044D  100C               	bcf	12,0	;volatile
+  2650                           
+  2651                           ;init_modbus.c: 173: FLAG_T1 = 1;
+  2652  044E  01FA               	clrf	_FLAG_T1
+  2653  044F  0AFA               	incf	_FLAG_T1,f
+  2654                           
+  2655                           ;init_modbus.c: 176: }
+  2656                           
+  2657                           ;init_modbus.c: 175: default: break;
+  2658                           
+  2659                           ;init_modbus.c: 174: break;
+  2660  0450  0008               	return
+  2661  0451                     i1l1246:	
+  2662  0451  0870               	movf	set_timer1@mode,w
+  2663                           
+  2664                           ; Switch size 1, requested type "space"
+  2665                           ; Number of cases is 2, Range of values is 15 to 35
+  2666                           ; switch strategies available:
+  2667                           ; Name         Instructions Cycles
+  2668                           ; simple_byte            7     4 (average)
+  2669                           ; direct_byte           52    10 (fixed)
+  2670                           ; jumptable            263     9 (fixed)
+  2671                           ;	Chosen strategy is simple_byte
+  2672  0452  3A0F               	xorlw	15	; case 15
+  2673  0453  1903               	skipnz
+  2674  0454  2C3A               	goto	i1l1226
+  2675  0455  3A2C               	xorlw	44	; case 35
+  2676  0456  1903               	skipnz
+  2677  0457  2C45               	goto	i1l1234
+  2678  0458  2C59               	goto	i1l205
+  2679  0459                     i1l205:	
+  2680  0459  0008               	return
+  2681  045A                     __end_of_set_timer1:	
+  2682  007E                     btemp	set	126	;btemp
+  2683  007E                     wtemp	set	126
+  2684  007E                     wtemp0	set	126
+  2685  0080                     wtemp1	set	128
+  2686  0082                     wtemp2	set	130
+  2687  0084                     wtemp3	set	132
+  2688  0086                     wtemp4	set	134
+  2689  0088                     wtemp5	set	136
+  2690  007F                     wtemp6	set	127
+  2691  007E                     ttemp	set	126
+  2692  007E                     ttemp0	set	126
+  2693  0081                     ttemp1	set	129
+  2694  0084                     ttemp2	set	132
+  2695  0087                     ttemp3	set	135
+  2696  007F                     ttemp4	set	127
+  2697  007E                     ltemp	set	126
+  2698  007E                     ltemp0	set	126
+  2699  0082                     ltemp1	set	130
+  2700  0086                     ltemp2	set	134
+  2701  0080                     ltemp3	set	128
+
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        1
+    BSS         156
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMMON           14      9      11
+    BANK0            80     25      60
+    BANK1            80      0      60
+    BANK2            80      0      60
+
+Pointer List with Targets:
+
+    memcpyee@to	PTR eeprom unsigned char  size(2) Largest target is 512
+		 -> RAM(DATA[512]), 
+
+    memcpyee@from	PTR const unsigned char  size(1) Largest target is 60
+		 -> __fltoee@data(COMMON[3]), __fttoee@data(COMMON[3]), __ltoee@data(COMMON[4]), __mtoee@data(COMMON[3]), 
+		 -> __itoee@data(COMMON[2]), __ctoee@data(COMMON[1]), RC_DATA(BANK1[60]), 
+
+    memcpyee@ptr	PTR const unsigned char  size(1) Largest target is 60
+		 -> __fltoee@data(COMMON[3]), __fttoee@data(COMMON[3]), __ltoee@data(COMMON[4]), __mtoee@data(COMMON[3]), 
+		 -> __itoee@data(COMMON[2]), __ctoee@data(COMMON[1]), RC_DATA(BANK1[60]), 
+
+    eecpymem@from	PTR eeprom unsigned char  size(2) Largest target is 512
+		 -> RAM(DATA[512]), RAM(DATA[512]), 
+
+    eecpymem@to	PTR volatile unsigned char  size(2) Largest target is 60
+		 -> __eetofl@data(COMMON[3]), __eetoft@data(COMMON[3]), __eetol@data(COMMON[4]), __eetom@data(COMMON[3]), 
+		 -> __eetoi@data(COMMON[2]), __eetoc@data(COMMON[1]), TX_DATA(BANK2[60]), IO_RAM(BANK0[27]), 
+
+    eecpymem@cp	PTR volatile unsigned char  size(2) Largest target is 60
+		 -> __eetofl@data(COMMON[3]), __eetoft@data(COMMON[3]), __eetol@data(COMMON[4]), __eetom@data(COMMON[3]), 
+		 -> __eetoi@data(COMMON[2]), __eetoc@data(COMMON[1]), TX_DATA(BANK2[60]), IO_RAM(BANK0[27]), 
+
+    crc16@recvByte	PTR unsigned char  size(2) Largest target is 60
+		 -> RC_DATA(BANK1[60]), TX_DATA(BANK2[60]), 
+
+    modbus_send@ptr	PTR unsigned char  size(2) Largest target is 60
+		 -> RC_DATA(BANK1[60]), TX_DATA(BANK2[60]), 
+
+
+Critical Paths under _main in COMMON
+
+    None.
+
+Critical Paths under _ISR in COMMON
+
+    _ISR->_modbus_recv
+    _modbus_recv->_set_timer1
+
+Critical Paths under _main in BANK0
+
+    _main->_modbus_send
+    _modbus_send->_crc16
+
+Critical Paths under _ISR in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _ISR in BANK1
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Critical Paths under _ISR in BANK2
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 9     9      0    4007
+                                             16 BANK0      9     9      0
+                            ___awdiv
+                              _crc16
+                           _eecpymem
+                        _init_16f690
+                           _memcpyee
+                        _modbus_send
+                        _process_cmd
+ ---------------------------------------------------------------------------------
+ (1) _process_cmd                                          4     4      0     138
+                                              0 BANK0      4     4      0
+ ---------------------------------------------------------------------------------
+ (1) _modbus_send                                          6     3      3     662
+                                             10 BANK0      6     3      3
+                              _crc16
+                           _send_one
+ ---------------------------------------------------------------------------------
+ (2) _send_one                                             1     1      0      22
+                                              0 BANK0      1     1      0
+ ---------------------------------------------------------------------------------
+ (2) _crc16                                               10     7      3     344
+                                              0 BANK0     10     7      3
+ ---------------------------------------------------------------------------------
+ (1) _memcpyee                                             6     2      4     969
+                                              0 BANK0      6     2      4
+ ---------------------------------------------------------------------------------
+ (1) _init_16f690                                          0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _eecpymem                                             8     3      5    1000
+                                              0 BANK0      8     3      5
+ ---------------------------------------------------------------------------------
+ (1) ___awdiv                                              9     5      4     512
+                                              0 BANK0      9     5      4
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 2
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (3) _ISR                                                  5     5      0     133
+                                              4 COMMON     5     5      0
+                        _modbus_recv
+                         _set_timer1
+ ---------------------------------------------------------------------------------
+ (4) _modbus_recv                                          3     3      0     111
+                                              1 COMMON     3     3      0
+                         _set_timer1
+ ---------------------------------------------------------------------------------
+ (4) _set_timer1                                           1     1      0      22
+                                              0 COMMON     1     1      0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 4
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   ___awdiv
+   _crc16
+   _eecpymem
+   _init_16f690
+   _memcpyee
+   _modbus_send
+     _crc16
+     _send_one
+   _process_cmd
+
+ _ISR (ROOT)
+   _modbus_recv
+     _set_timer1
+   _set_timer1
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+SFR3                 0      0       0       4        0.0%
+BITSFR3              0      0       0       4        0.0%
+BANK2               50      0      3C       7       75.0%
+BITBANK2            50      0       0       6        0.0%
+SFR2                 0      0       0       5        0.0%
+BITSFR2              0      0       0       5        0.0%
+BANK1               50      0      3C       5       75.0%
+BITBANK1            50      0       0       4        0.0%
+SFR1                 0      0       0       2        0.0%
+BITSFR1              0      0       0       2        0.0%
+BANK0               50     19      3C       3       75.0%
+BITBANK0            50      0       0       9        0.0%
+SFR0                 0      0       0       1        0.0%
+BITSFR0              0      0       0       1        0.0%
+COMMON               E      9       B       1       78.6%
+BITCOMMON            E      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+DATA                 0      0      BF      10        0.0%
+ABS                  0      0      BF       8        0.0%
+NULL                 0      0       0       0        0.0%
+STACK                0      0       0       2        0.0%
+EEDATA             100      0       0       0        0.0%
+
+
+Microchip Technology PIC Macro Assembler V1.38 build -256452561 
+Symbol Table                                                                                   Mon Oct 16 08:44:57 2017
+
+             __CFG_CP$ON 0000                       l92 0191                       _RD 0C60  
+            __CFG_CPD$ON 0000                       _WR 0C61             ___awdiv@sign 0048  
+                     fsr 0004                      l107 0180                      l311 03A5  
+                    l170 045F                      l323 02CD                      l316 03B6  
+                    l328 02E7                      _ADD 0020                      l195 0351  
+                    _GIE 005F                      _RB4 0034                      _RB6 0036  
+                    _PR2 0092                      _ISR 0276                      u825 023D  
+                    u845 0249                      u855 0255                      u865 025F  
+                    fsr0 0004                      indf 0000             __CFG_IDLOC0$ 0020  
+           __CFG_IDLOC1$ 0017             __CFG_IDLOC2$ 0010             __CFG_IDLOC3$ 0009  
+           __CFG_IESO$ON 0000                     ?_ISR 0070             ?_init_16f690 0070  
+                   l1210 0339                     l1220 0359                     l1222 0320  
+                   l1342 0374                     l1432 0227                     l1328 03AF  
+                   l1344 038F                     l1504 0065                     l1450 0248  
+                   l1460 0269                     l1364 042F                     l1438 0232  
+                   l1550 0108                     l1542 00B4                     l1464 0271  
+                   l1456 025E                     l1448 023A                     l1544 00E9  
+                   l1554 0123                     l1396 02E0                     l1564 0130  
+                   l1566 015F                     l1574 018D                     l1568 0163  
+                   _BRGH 04C2                     _T0IE 005D                     _CREN 00C4  
+                   u1044 01AC                     u1045 01AA                     _IOCA 0096  
+                   _IOCB 0116                     _PIE1 008C                     _PIE2 008D  
+                   _PEIE 005E                     _RCIE 0465                     _RCIF 0065  
+                   _PCON 008E                     _PIR1 000C                     _PIR2 000D  
+                   _RC_N 0025                     _SPEN 00C7                     _TRMT 04C1  
+                   _WREN 0C62                     _TXEN 04C5                     _SYNC 04C4  
+                   _WPUA 0095                     _WPUB 0115            __CFG_FCMEN$ON 0000  
+                   _main 002F                     btemp 007E             process_cmd@i 0045  
+          __CFG_BOREN$ON 0000                     ltemp 007E                     start 0011  
+                   ttemp 007E                     wtemp 007E                    ??_ISR 0074  
+                  ?_main 0070          __end_of___awdiv 0276                    _EEADR 010D  
+                  _BRG16 04DB            __CFG_WDTE$OFF 0000                    _CARRY 0018  
+                  _ANSEL 011E          ___awdiv@divisor 0042                    _T1CON 0010  
+                  _T2CON 0012                    _CRC_H 0021                    _CRC_L 0022  
+                  _RABIE 005B                    _RABIF 0058                    i1l124 02BA  
+                  i1l205 0459          ___awdiv@counter 0047                    _RCREG 001A  
+                  _TMR1H 000F                    _TMR1L 000E                    _SPBRG 0099  
+                  _PORTA 0005                    _PORTB 0006                    _PORTC 0007  
+                  _TRISA 0085                    _TRISB 0086                    _TRISC 0087  
+                  _TXREG 0019            __CFG_PWRTE$ON 0000                    _crc16 0315  
+                  main@i 0058                    pclath 000A                    ltemp0 007E  
+                  ltemp1 0082                    ltemp2 0086                    ltemp3 0080  
+                  ttemp0 007E                    ttemp1 0081                    ttemp2 0084  
+                  ttemp3 0087                    ttemp4 007F                    status 0003  
+                  wtemp0 007E                    wtemp1 0080                    wtemp2 0082  
+                  wtemp3 0084                    wtemp4 0086                    wtemp5 0088  
+                  wtemp6 007F           __CFG_MCLRE$OFF 0000          __initialization 0013  
+           ?_modbus_recv 0070             ?_modbus_send 004C             __end_of_main 01BE  
+                 ??_main 0052                   ?_crc16 0042                   _EEDATA 010C  
+                 _EECON1 018C                   _EECON2 018D         ___awdiv@dividend 0044  
+                 _ANSELH 011F                   i1l1234 0445                   i1l1226 043A  
+                 i1l1412 03F8                   i1l1246 0451                   i1l1422 040F  
+                 i1l1414 03FA                   i1l1616 028E                   i1l1608 0285  
+                 i1l1634 02AC                   i1l1626 029E                   i1l1618 0291  
+                 _INTCON 000B                   _IO_RAM 0027                   _OSCCON 008F  
+                 _TMR1IE 0460                   _TMR1IF 0060                   _TMR2IE 0461  
+                 _TMR2IF 0061                   _SPBRGH 009A                   _TMR2ON 0092  
+                 _WDTCON 0097                   _SWDTEN 04B8         __end_of_eecpymem 03DB  
+              ??___awdiv 0046                   crc16@i 004B                   crc16@n 004A  
+            memcpyee@ptr 0047         __end_of_memcpyee 0315         ___awdiv@quotient 0049  
+       __end_of_send_one 0464            modbus_recv@rd 0073                   saved_w 007E  
+           ?_process_cmd 0070  __end_of__initialization 002C     __size_of_init_16f690 005D  
+         __pcstackCOMMON 0070             __pidataBANK0 046C            __end_of_crc16 035E  
+                ??_crc16 0045               crc16@count 0044               __pbssBANK0 0020  
+             __pbssBANK1 00A0               __pbssBANK2 0120               __pmaintext 002F  
+             __pintentry 0004                  _CM1CON0 0119                  _CM2CON0 011A  
+   __size_of_modbus_recv 0038     __size_of_modbus_send 0041                  _FLAG_15 0023  
+                _FLAG_35 0079                  _FLAG_T1 007A                  _RC_DATA 00A0  
+              ?_eecpymem 0042                  _TX_DATA 0120                ?_memcpyee 0042  
+              ?_send_one 0070                  ___awdiv 021B                _FLAG_RCOK 0024  
+           memcpyee@from 0044                  __ptext1 0413                  __ptext2 035E  
+                __ptext3 045A                  __ptext4 0315                  __ptext5 02C7  
+                __ptext6 01BE                  __ptext7 039F                  __ptext8 021B  
+                __ptext9 0276             memcpyee@size 0045             __size_of_ISR 0051  
+             ??_eecpymem 0047                  clrloop0 0465     end_of_initialization 002C  
+        process_cmd@temp 0043               ??_memcpyee 0046           modbus_send@len 004E  
+   __size_of_process_cmd 0025           modbus_send@ptr 004C               eecpymem@cp 0048  
+             eecpymem@to 0042               ??_send_one 0042               _set_timer1 0438  
+          crc16@recvByte 0042      start_initialization 0013              __end_of_ISR 02C7  
+          ??_init_16f690 0042            _FLAG_IOCHANGE 005B              ?_set_timer1 0070  
+             memcpyee@to 0042              __pdataBANK0 005B             modbus_send@i 0051  
+         set_timer1@mode 0070              crc16@saveHi 0049              crc16@saveLo 0048  
+            __pbssCOMMON 0079                ___latbits 0001            __pcstackBANK0 0042  
+      __size_of_eecpymem 003C      __end_of_init_16f690 021B        __size_of_memcpyee 004E  
+          ??_modbus_recv 0071            ??_modbus_send 004F        __size_of_send_one 000A  
+               ?___awdiv 0042           __size_of_crc16 0049      __size_of_set_timer1 0022  
+      interrupt_function 0004                clear_ram0 0464             _tmr2DelayCnt 0026  
+    __end_of_modbus_recv 0413      __end_of_modbus_send 039F                main@i_104 0057  
+              main@i_105 0059                main@count 005A              _init_16f690 01BE  
+          ??_process_cmd 0042         __size_of___awdiv 005B             eecpymem@from 0044  
+               _eecpymem 039F             eecpymem@size 0046                 __ptext10 03DB  
+               __ptext11 0438                send_one@a 0042                 _memcpyee 02C7  
+          __size_of_main 018F      __end_of_process_cmd 0438                 _send_one 045A  
+            _modbus_recv 03DB             ??_set_timer1 0070              _modbus_send 035E  
+       process_cmd@portc 0044                 intlevel1 0000       __end_of_set_timer1 045A  
+             _OPTION_REG 0081     modbus_recv@recv_data 0072              _process_cmd 0413  
+      __CFG_FOSC$INTRCIO 0000  
